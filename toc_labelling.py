@@ -18,6 +18,8 @@ def extract_label_to_json(toc_extracted, output_dir):
   output_dir: str
     Directory where the new json file will be created.
   '''
+    
+
   contract_title = toc_extracted[0]
   toc = toc_extracted[1]
 
@@ -90,9 +92,10 @@ def extract_label_to_json(toc_extracted, output_dir):
   labels_title = '/' + contract_title[:contract_title.find('_')]
   with open(output_dir + labels_title, 'w') as f:
     json.dump(label_dict, f)
+
   return contract_title, label_dict
 
-def extract_labels_to_folder(dict_of_tocs, output_dir):
+def extract_labels_to_folder(dict_of_tocs, output_dir, contract_map):
   '''
   Outputs both a folder of json outputs for each contract along with a single json containing
   all outputs in a dictionary format.
@@ -108,6 +111,8 @@ def extract_labels_to_folder(dict_of_tocs, output_dir):
     If the directory does not exist it will be created.
   '''
   agg_label_dict = {}
+  id_map = {v:k for k, v in contract_map.items()}
+
   for item in dict_of_tocs.items():
     if item[0] in agg_label_dict.keys():
       continue
@@ -116,9 +121,11 @@ def extract_labels_to_folder(dict_of_tocs, output_dir):
     if not os.path.isdir(output_dir):
       os.makedirs(output_dir)
     out = extract_label_to_json(item, output_dir)
-    agg_label_dict[out[0]] = out[1]
-    with open('./TOC_Labels_full', 'w') as f:
-      json.dump(agg_label_dict, f)
+    id = id_map[out[0][:-5]]
+    agg_label_dict[id] = out[1]
+
+  with open('./TOC_Labels_full.json', 'w') as f:
+    json.dump(agg_label_dict, f)
 
 
 

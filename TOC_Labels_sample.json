@@ -1,0 +1,439 @@
+{
+  "ct_506": {
+    "1": ["Article 1. Definitions", {}],
+    "2": ["Article 2. Grant of Rights", {}],
+    "3": ["2.1 Grant of Rights to Distributor", {}],
+    "4": ["2.2 Sub-distribution by Distributor", {}],
+    "5": ["2.3 Supply of Product for Distributorship", {}],
+    "6": ["2.4 No Other Rights; Other Limitations", {}],
+    "7": ["2.5 Non-Compete Covenant", {}],
+    "8": ["2.6 No Activities Outside the Territory or Field", {}],
+    "9": ["3.1 Joint Steering Committee", {}],
+    "10": ["3.2 Expenses", {}],
+    "11": ["3.3 Alliance Managers", {}],
+    "12": ["3.4 Scope of Governance", {}],
+    "13": ["4.1 Nonclinical and Clinical Studies and CMC Requirements", {}],
+    "14": ["4.2 Regulatory Activities", {}],
+    "15": ["4.3 Distributors Right to Use and Reference", {}],
+    "16": ["4.4 Zogenixs Right to Use and Reference", {}],
+    "17": ["4.5 Adverse Event Reporting", {}],
+    "18": ["4.6 Drug Safety and Pharmacovigilance System including Global Safety Database", {}],
+    "19": ["4.7 Regulatory Audit", {}],
+    "20": ["4.8 Use of Subcontractors", {}],
+    "21": ["4.9 Recalls", {}],
+    "22": ["4.1 Development Expenses", {}],
+    "23": ["5.1 Commercialization of the Product.", {}],
+    "24": ["5.2 Supply", {}],
+    "25": ["5.3 Trademark Rights", {}],
+    "26": ["5.4 Commercial Expenses", {}],
+    "27": ["6.1 Upfront Payment", {}],
+    "28": ["6.2 Funding to Support Development of The Product", {}],
+    "29": ["6.3 Regulatory Milestones", {}],
+    "30": ["6.4 Sales Milestones", {}],
+    "31": ["6.5 Supply Payments", {}],
+    "32": ["7.1 Payment Method", {}],
+    "33": ["7.2 Currency Conversion", {}],
+    "34": ["7.3 Taxes", {}],
+    "35": ["7.4 Records", {}],
+    "36": ["7.5 Audits", {}],
+    "37": ["7.6 Late Payments", {}],
+    "38": ["8.1 Confidential Information", {}],
+    "39": ["8.2 Exceptions", {}],
+    "40": ["8.3 Permitted Disclosures", {}],
+    "41": ["8.4 Confidentiality of this Agreement and its Terms", {}],
+    "42": ["8.5 Public Announcements", {}],
+    "43": ["8.6 Publication", {}],
+    "44": ["8.7 Prior Non-Disclosure Agreements", {}],
+    "45": ["8.8 Equitable Relief", {}],
+    "46": ["9.1 Ownership of Intellectual Property", {}],
+    "47": ["9.2 Zogenix Patent Prosecution and Maintenance", {}],
+    "48": ["9.3 Infringement by Third Parties", {}],
+    "49": ["9.4 Third Party Intellectual Property Rights", {}],
+    "50": ["9.5 Patent Term Restoration", {}],
+    "51": ["9.6 Patent Marking", {}],
+    "52": ["9.7 Zogenix Trademarks", {}],
+    "53": ["9.8 Product Trademarks", {}],
+    "54": ["1 0.1 Mutual Representations, Warranties and Covenants", {}],
+    "55": ["1 0.2 Representations, Warranties and Covenants of Distributor", {}],
+    "56": ["1 0.3 Representations and Warranties of Zogenix", {}],
+    "57": ["1 0.4 Disclaimer", {}],
+    "58": ["1 0.5 Limitation of Liability", {}],
+    "59": ["1 1.1 Indemnification of Zogenix", {}],
+    "60": ["1 1.2 Indemnification of Distributor", {}],
+    "61": ["1 1.3 Procedure", {}],
+    "62": ["1 1.4 Insurance", {}],
+    "63": ["1 2.1 Term", {}],
+    "64": ["1 2.2 Termination", {}],
+    "65": ["1 2.3 Rights on Termination", {}],
+    "66": ["1 2.4 Exercise of Right to Terminate", {}],
+    "67": ["1 2.5 Damages; Relief", {}],
+    "68": ["1 2.6 Accrued Obligations; Survival", {}],
+    "69": ["1 3.1 Objective", {}],
+    "70": ["1 3.2 Resolution by Executives", {}],
+    "71": ["1 3.3 Arbitration", {}],
+    "72": ["1 4.1 Governing Law", {}],
+    "73": ["1 4.2 Force Majeure", {}],
+    "74": ["1 4.3 Assignment", {}],
+    "75": ["1 4.4 Severability", {}],
+    "76": ["1 4.5 Notices", {}],
+    "77": ["1 4.6 Entire Agreement; Amendments", {}],
+    "78": ["1 4.7 Headings", {}],
+    "79": ["1 4.8 Independent Contractors", {}],
+    "80": ["1 4.9 Waiver", {}],
+    "81": ["1 4.1 Cumulative Remedies", {}],
+    "82": ["1 4.11 Waiver of Rule of Construction", {}],
+    "83": ["1 4.12 Interpretation", {}],
+    "84": ["1 4.13 No Third Party Beneficiaries", {}],
+    "85": ["1 4.14 English Language", {}],
+    "86": ["1 4.15 Counterparts", {}],
+    "87": ["1 4.16 Further Actions", {}]
+  },
+  "ct_353": {
+    "1": ["1. Definitions", {}],
+    "2": ["2. Term", {}],
+    "3": ["3. Grant of License and Exclusivity", {}],
+    "4": ["4. Retention of Rights", {}],
+    "5": ["5. Appearances", {}],
+    "6": ["6. Compensation", {}],
+    "7": ["7. Supply of Endorsed Products", {}],
+    "8": ["8. Approval of Advertising", {}],
+    "9": ["9. Ownership", {}],
+    "10": ["10. SAG and/or AFTRA", {}],
+    "11": ["11. Standards", {}],
+    "12": ["12. Events of Default", {}],
+    "13": ["13. Termination/Remedies", {}],
+    "14": ["14. Companys Debts", {}],
+    "15": ["15. Indemnification", {}],
+    "16": ["16. Insurance", {}],
+    "17": ["17. Waiver", {}],
+    "18": ["18. Notices", {}],
+    "19": ["19. Assignment", {}],
+    "20": ["20. Independent Contractor", {}],
+    "21": ["21. Joint Venture", {}],
+    "22": ["22. Governing Law", {}],
+    "23": ["23 Entire Agreement", {}],
+    "24": ["24. Amendments", {}],
+    "25": ["25. Authority", {}],
+    "26": ["26. Severability", {}],
+    "27": ["27. Compliance with Laws", {}],
+    "28": ["28. Attorneys Fees and Costs", {}],
+    "29": ["29. Force Majeure", {}],
+    "30": ["30. Confidentiality", {}],
+    "31": ["31. Counterparts", {}],
+    "32": ["Orlando, Florida 32803", {}]
+  },
+  "ct_200": {
+    "1": ["ARTICLE 1 DEFINITIONS", {}],
+    "2": ["ARTICLE 2 COLLABORATION MANAGEMENT", {}],
+    "3": ["ARTICLE 3 DEVELOPMENT AND REGULATORY", {}],
+    "4": ["ARTICLE 4 COMMERCIALIZATION", {}],
+    "5": ["ARTICLE 5 GRANT OF RIGHTS", {}],
+    "6": ["ARTICLE 6 PAYMENTS AND RECORDS", {}],
+    "7": ["ARTICLE 7 INTELLECTUAL PROPERTY", {}],
+    "8": ["ARTICLE 8 PHARMACOVIGILANCE AND SAFETY", {}],
+    "9": ["ARTICLE 9 Confidentiality AND Non-Disclosure", {}],
+    "10": ["ARTICLE 10 REPRESENTATIONS AND Warranties", {}],
+    "11": ["ARTICLE 11 Indemnity", {}],
+    "12": ["ARTICLE 12 Term and Termination", {}],
+    "13": ["ARTICLE 13 Miscellaneous", {}]
+  },
+  "ct_308": {
+    "1": ["Section1. Definitions", {}],
+    "2": ["Section2. Appointment and Obligations of the Remarketing Agent", {}],
+    "3": [
+      "Section3. Representations, Warranties and Covenants of the Remarketing Agent and the Fund",
+      {}
+    ],
+    "4": ["Section4. Fees and Expenses", {}],
+    "5": ["Section5. Resignation, Suspension and Removal of the Remarketing Agent", {}],
+    "6": ["Section6. Dealing in the VRRM-MFP Shares", {}],
+    "7": ["Section7. Information", {}],
+    "8": ["Section8. Conditions to Obligations of the Remarketing Agent", {}],
+    "9": ["Section9. Indemnification", {}],
+    "10": ["Section10. Termination of Remarketing Agreement", {}],
+    "11": ["Section11. Remarketing Agents Performance; Duty of Care", {}],
+    "12": ["Section12. Amendment, Supplement or Modification of Agreements", {}],
+    "13": ["Section13. Books and Records", {}],
+    "14": ["Section14. Governing Law", {}],
+    "15": ["Section15. Waiver of Jury Trial", {}],
+    "16": ["Section16. Certain Provisions to Survive Termination of Agreement", {}],
+    "17": ["Section17. Successors and Assigns", {}],
+    "18": ["Section18. Headings", {}],
+    "19": ["Section19. Severability", {}],
+    "20": ["Section20. Counterparts", {}],
+    "21": ["Section21. Remarketing Agent Not Acting as Underwriter", {}],
+    "22": ["Section22. Amendment", {}],
+    "23": ["Section23. Benefits", {}],
+    "24": ["Section24. Notices and Wire Instructions", {}],
+    "25": ["Section25. Liability of Officers, Trustees and Shareholders", {}],
+    "26": ["Section26. Nonpetition Covenant", {}]
+  },
+  "ct_327": {
+    "1": ["ARTICLE I DEFINITIONS", { "1": ["1.1 Defined Terms 2", {}] }],
+    "2": [
+      "ARTICLE II ASSIGNMENT OF SOLELY OWNED INTELLECTUAL PROPERTY RIGHTS",
+      { "1": ["2.1 Assigned Intellectual Property Rights 7", {}] }
+    ],
+    "3": [
+      "ARTICLE III LICENSING OF INTELLECTUAL PROPERTY RIGHTS",
+      {
+        "1": ["3.1 Licensed Intellectual Property Rights 8", {}],
+        "2": ["3.2 Reserved Intellectual Property Rights 10", {}],
+        "3": ["3.3 No Rescission 10", {}]
+      }
+    ],
+    "4": [
+      "ARTICLE IV TRADEMARKS",
+      {
+        "1": ["4.1 Ownership of United Technologies Trademarks 10", {}],
+        "2": ["4.2 Use of United Technologies Trademarks 11", {}],
+        "3": ["4.3 Special Trademark Provisions. 12", {}]
+      }
+    ],
+    "5": [
+      "ARTICLE V EXCLUDED AGREEMENTS",
+      { "1": ["5.1 No Change to Excluded Agreements 12", {}] }
+    ],
+    "6": [
+      "ARTICLE VI CONFIDENTIALITY",
+      {
+        "1": ["6.1 Received Information and Materials 12", {}],
+        "2": ["6.2 Confidential Information 12", {}],
+        "3": ["6.3 Obligations 13", {}],
+        "4": ["6.4 Termination of UTC NDA 13", {}]
+      }
+    ],
+    "7": [
+      "ARTICLE VII LIMITATIONS AND DISCLAIMERS",
+      {
+        "1": ["7.1 Subsequent Delivery of Intellectual Property Rights 13", {}],
+        "2": ["7.2 No Additional Obligations 14", {}],
+        "3": ["7.3 DISCLAIMER 14", {}],
+        "4": ["7.4 Limitations of Liability 14", {}]
+      }
+    ],
+    "8": [
+      "ARTICLE VIII GOVERNING LAW AND DISPUTE RESOLUTION",
+      {
+        "1": ["8.1 Governing Law 15", {}],
+        "2": ["8.2 Alternative Dispute Resolution 15", {}],
+        "3": ["8.3 Confidentiality 13", {}],
+        "4": ["8.4 Equitable Relief 13", {}]
+      }
+    ],
+    "9": [
+      "ARTICLE IX GENERAL PROVISIONS",
+      {
+        "1": ["9.1 Entire Agreement; Conflict Among Agreements 16", {}],
+        "2": ["9.2 Assignment and Change of Control; Successor and Assigns 16", {}],
+        "3": ["9.3 Bankruptcy 17", {}],
+        "4": ["9.4 Amendments and Waivers 17", {}],
+        "5": ["9.5 Notice 18", {}],
+        "6": ["9.6 Severability 18", {}],
+        "7": ["9.7 Counterparts 18", {}],
+        "8": ["9.8 Further Assurances 18", {}],
+        "9": ["9.9 Interpretation 19", {}]
+      }
+    ]
+  },
+  "ct_345": {
+    "1": [
+      "Article 1 Interpretation",
+      {
+        "1": ["1.1 Definitions 6", {}],
+        "2": ["1.2 Other Definitions 10", {}],
+        "3": ["1.3 Currency 10", {}],
+        "4": ["1.4 Headings 10", {}],
+        "5": ["1.5 Exhibits 10", {}],
+        "6": ["1.6 Applicable Law 10", {}]
+      }
+    ],
+    "2": ["Article 2 Term", {}],
+    "3": ["2.1 Term", { "2": ["2.2 Effect of Expiration on Purchase Orders 11", {}] }],
+    "4": [
+      "3.1 Supply of Product",
+      {
+        "4": ["3.2 Manufacturing Services 12", {}],
+        "5": ["3.3 Supply of Materials and Customer Material 12", {}],
+        "6": ["3.4 Production Capacity 14", {}],
+        "7": ["3.5 Processing Changes 14", {}],
+        "8": ["3.6 Monitoring of Facilities 14", {}],
+        "9": ["3.7 Subcontracting 15", {}]
+      }
+    ],
+    "5": ["3.8 [* * *]", {}],
+    "6": [
+      "3.9 [* * *]",
+      {
+        "12": ["3.1 Territory Expansion 15", {}],
+        "13": ["3.11 Supply to Customer Licensees 16", {}],
+        "14": ["3.12 Alternative Supply 16", {}],
+        "15": ["4.1 Short Term Rolling Forecasts 16", {}],
+        "16": ["4.2 Long Term Forecasts 17", {}],
+        "17": ["5.1 Release Testing 17", {}],
+        "18": ["5.2 Additional Release Testing 18", {}],
+        "19": ["5.3 Retention Samples 18", {}],
+        "20": ["5.4 Stability Testing 18", {}],
+        "21": ["5.5 Reference Standards 18", {}],
+        "22": ["5.6 Preparation of Process Qualification 18", {}],
+        "23": ["6.1 Placement of Purchase Orders 19", {}],
+        "24": ["6.2 Acceptance of Orders 19", {}],
+        "25": ["6.3 Delays 19", {}],
+        "26": ["6.4 Cancellation of Purchase Orders 20", {}],
+        "27": ["6.5 Material Failure of Supply 20", {}],
+        "28": ["6.6 Services 20", {}]
+      }
+    ],
+    "7": [
+      "Article 7 Shipment of Product",
+      {
+        "1": ["7.1 Storage of Product 20", {}],
+        "2": ["7.2 Release and Shipment of Product 21", {}],
+        "3": ["7.3 Documentation 21", {}],
+        "4": ["7.4 Steering Committee 21", {}]
+      }
+    ],
+    "8": [
+      "Article 8 Acceptance of Shipments",
+      {
+        "1": ["8.1 Acceptance of Shipments 22", {}],
+        "2": ["8.2 Dispute of Rejected Product 22", {}],
+        "3": ["8.3 Remedies 23", {}]
+      }
+    ],
+    "9": [
+      "Article 9 Fees",
+      {
+        "1": ["9.1 Fees 23", {}],
+        "2": ["9.2 Adjustments to Fees 23", {}],
+        "3": ["9.3 Taxes 24", {}]
+      }
+    ],
+    "10": [
+      "Article 10 Invoicing and Payment",
+      {
+        "1": ["10.1 Issuance of Invoices 24", {}],
+        "2": ["10.2 Invoice Contents 24", {}],
+        "3": ["10.3 Delay of Shipment 25", {}],
+        "4": ["10.4 Payment of Invoices 25", {}]
+      }
+    ],
+    "11": [
+      "Article 11 Intellectual Property",
+      {
+        "1": ["11.1 Title 25", {}],
+        "2": ["11.2 No Grant of Rights 25", {}],
+        "3": ["11.3 Grant of License by Customer 26", {}],
+        "4": ["11.4 Ownership of Inventions 26", {}],
+        "5": ["11.5 Patents to Inventions 26", {}],
+        "6": ["11.6 No Use of Trademarks 26", {}],
+        "7": ["11.7 [* * *] 26", {}]
+      }
+    ],
+    "12": [
+      "Article 12 Confidentiality & Publicity",
+      {
+        "1": ["12.1 Obligation of Confidentiality 27", {}],
+        "2": ["12.2 Disclosure with Consent 27", {}],
+        "3": ["12.3 Publicity 28", {}],
+        "4": ["12.4 Disclosure Required by Law 28", {}],
+        "5": ["12.5 Employee Confidentiality and Invention Assignment 28", {}],
+        "6": ["12.6 Duration of Obligation 28", {}]
+      }
+    ],
+    "13": [
+      "Article 13 Representations, Warranties and Covenants",
+      {
+        "1": ["13.1 Suppliers Representations, Warranties and Covenants 29", {}],
+        "2": ["13.2 Customers Representations, Warranties and Covenants 30", {}],
+        "3": ["13.3 No Other Warranty 30", {}],
+        "4": ["13.4 No Consequential Damages and Limitation of Liability 31", {}]
+      }
+    ],
+    "14": [
+      "Article 14 Indemnification",
+      {
+        "1": ["14.1 Indemnification of Supplier 31", {}],
+        "2": ["14.2 Indemnification of Customer 32", {}],
+        "3": ["14.3 [* * *] 32", {}],
+        "4": ["14.4 Indemnification Procedure 32", {}]
+      }
+    ],
+    "15": [
+      "Article 15 Insurance",
+      { "1": ["15.1 Insurance Coverage 32", {}], "2": ["15.2 Evidence of Insurance 33", {}] }
+    ],
+    "16": [
+      "Article 16 Legal and Regulatory",
+      {
+        "1": ["16.1 Compliance with Laws 33", {}],
+        "2": ["16.2 Maintenance of Records 33", {}],
+        "3": ["16.3 Notice of Reports 33", {}],
+        "4": ["16.4 Drug Master Files 34", {}],
+        "5": ["16.5 Compliance with Regulatory Standards 34", {}],
+        "6": ["16.6 Inspection 34", {}]
+      }
+    ],
+    "17": [
+      "Article 17 Recalls",
+      {
+        "1": ["17.1 Safety 34", {}],
+        "2": ["17.2 Recalls 34", {}],
+        "3": ["17.3 Suppliers Liability for Recall 35", {}],
+        "4": ["17.4 Customers Liability for Recall 35", {}],
+        "5": ["17.5 Replacement Shipments 35", {}]
+      }
+    ],
+    "18": [
+      "Article 18 Termination",
+      {
+        "1": ["18.1 Termination 35", {}],
+        "2": ["18.2 Consequences of Termination 36", {}],
+        "3": ["18.3 Return of Samples 37", {}],
+        "4": ["18.4 Return of Confidential Information 37", {}],
+        "5": ["18.5 Survival 38", {}]
+      }
+    ],
+    "19": [
+      "Article 19 Miscellaneous",
+      {
+        "1": ["19.1 Assignment; Inurement 38", {}],
+        "2": ["19.2 Change of Control 39", {}],
+        "3": ["19.3 Counterparts 39", {}],
+        "4": ["19.4 Dispute Resolution 39", {}],
+        "5": ["19.5 Force Majeure 39", {}],
+        "6": ["19.6 Performance 40", {}],
+        "7": ["19.7 Further Assurances 40", {}],
+        "8": ["19.8 Independent Contractors 40", {}],
+        "9": ["19.9 Injunctions 40", {}],
+        "10": ["19.1 Notices 40", {}],
+        "11": ["19.11 Entire Agreement 41", {}],
+        "12": ["19.12 Severability 41", {}],
+        "13": ["19.13 Waiver 42", {}]
+      }
+    ],
+    "20": ["1.1 Definitions", {}],
+    "21": ["1.2 Other Definitions", {}],
+    "22": ["1.3 Currency", {}],
+    "23": ["1.4 Headings", {}],
+    "24": ["1.5 Exhibits", {}],
+    "25": ["1.6 Applicable Law", {}],
+    "26": ["2.1 Term", {}],
+    "27": ["2.2 Effect of Expiration on Purchase Orders", {}],
+    "28": ["3.1 Supply of Product", {}],
+    "29": ["3.2 Manufacturing Services", {}],
+    "30": ["3.3 Supply of Materials and Customer Material", {}],
+    "31": ["3.4 Production Capacity", {}],
+    "32": ["3.5 Processing Changes", {}],
+    "33": ["3.6 Monitoring of Facilities", {}],
+    "34": ["3.7 Subcontracting", {}],
+    "35": ["3.8 [* * *]", {}],
+    "36": ["3.9 [* * *]", {}],
+    "37": ["3.10 Territory Expansion", {}],
+    "38": ["3.11 Supply to Customer Licensees", {}],
+    "39": ["3.12 Alternative Supply", {}],
+    "40": ["4.1 Short Term Rolling Forecasts", {}],
+    "41": ["4.2 Long Term Forecasts", {}],
+    "42": ["5.1 Release Testing", {}]
+  }
+}

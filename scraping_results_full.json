@@ -1,0 +1,837 @@
+{
+  "ZogenixInc_20190509_10-Q_EX-10.2_11663313_EX-10.2_Distributor Agreement.html": [
+    ["Article 1. Definitions"],
+    ["Article 2. Grant of Rights"],
+    ["2.1", "Grant of Rights to Distributor"],
+    ["2.2", "Sub-distribution by Distributor"],
+    ["2.3", "Supply of Product for Distributorship"],
+    ["2.4", "No Other Rights; Other Limitations"],
+    ["2.5", "Non-Compete Covenant"],
+    ["2.6", "No Activities Outside the Territory or Field"],
+    ["Article 3. Governance"],
+    ["3.1", "Joint Steering Committee"],
+    ["3.2", "Expenses"],
+    ["3.3", "Alliance Managers"],
+    ["3.4", "Scope of Governance"],
+    ["Article 4. Development and Regulatory Activities"],
+    ["4.1", "Nonclinical and Clinical Studies and CMC Requirements"],
+    ["4.2", "Regulatory Activities"],
+    ["4.3", "Distributors Right to Use and Reference"],
+    ["4.4", "Zogenixs Right to Use and Reference"],
+    ["4.5", "Adverse Event Reporting"],
+    ["4.6", "Drug Safety and Pharmacovigilance System including Global Safety Database"],
+    ["4.7", "Regulatory Audit"],
+    ["4.8", "Use of Subcontractors"],
+    ["4.9", "Recalls"],
+    ["4.1", "Development Expenses"],
+    ["Article 5. Commercialization; Supply: Trademarks"],
+    ["5.1", "Commercialization of the Product."],
+    ["5.2", "Supply"],
+    ["5.3", "Trademark Rights"],
+    ["5.4", "Commercial Expenses"],
+    ["Article 6. Payments"],
+    ["6.1", "Upfront Payment"],
+    ["6.2", "Funding to Support Development of The Product"],
+    ["6.3", "Regulatory Milestones"],
+    ["6.4", "Sales Milestones"],
+    ["6.5", "Supply Payments"],
+    ["Article 7. Payments, Books and Records"],
+    ["7.1", "Payment Method"],
+    ["7.2", "Currency Conversion"],
+    ["7.3", "Taxes"],
+    ["7.4", "Records"],
+    ["7.5", "Audits"],
+    ["7.6", "Late Payments"],
+    ["Article 8. Confidentiality"],
+    ["8.1", "Confidential Information"],
+    ["8.2", "Exceptions"],
+    ["8.3", "Permitted Disclosures"],
+    ["8.4", "Confidentiality of this Agreement and its Terms"],
+    ["8.5", "Public Announcements"],
+    ["8.6", "Publication"],
+    ["8.7", "Prior Non-Disclosure Agreements"],
+    ["8.8", "Equitable Relief"],
+    ["Article 9. Intellectual Property Ownership and Enforcement"],
+    ["9.1", "Ownership of Intellectual Property"],
+    ["9.2", "Zogenix Patent Prosecution and Maintenance"],
+    ["9.3", "Infringement by Third Parties"],
+    ["9.4", "Third Party Intellectual Property Rights"],
+    ["9.5", "Patent Term Restoration"],
+    ["9.6", "Patent Marking"],
+    ["9.7", "Zogenix Trademarks"],
+    ["9.8", "Product Trademarks"],
+    ["Article 10. Representations, Warranties and Covenants; Limitation of Liability"],
+    ["10.1", "Mutual Representations, Warranties and Covenants"],
+    ["10.2", "Representations, Warranties and Covenants of Distributor"],
+    ["10.3", "Representations and Warranties of Zogenix"],
+    ["10.4", "Disclaimer"],
+    ["10.5", "Limitation of Liability"],
+    ["Article 11. Indemnification"],
+    ["11.1", "Indemnification of Zogenix"],
+    ["11.2", "Indemnification of Distributor"],
+    ["11.3", "Procedure"],
+    ["11.4", "Insurance"],
+    ["Article 12. Term and Termination"],
+    ["12.1", "Term"],
+    ["12.2", "Termination"],
+    ["12.3", "Rights on Termination"],
+    ["12.4", "Exercise of Right to Terminate"],
+    ["12.5", "Damages; Relief"],
+    ["12.6", "Accrued Obligations; Survival"],
+    ["Article 13. Dispute Resolution"],
+    ["13.1", "Objective"],
+    ["13.2", "Resolution by Executives"],
+    ["13.3", "Arbitration"],
+    ["Article 14. General Provisions"],
+    ["14.1", "Governing Law"],
+    ["14.2", "Force Majeure"],
+    ["14.3", "Assignment"],
+    ["14.4", "Severability"],
+    ["14.5", "Notices"],
+    ["14.6", "Entire Agreement; Amendments"],
+    ["14.7", "Headings"],
+    ["14.8", "Independent Contractors"],
+    ["14.9", "Waiver"],
+    ["14.1", "Cumulative Remedies"],
+    ["14.11", "Waiver of Rule of Construction"],
+    ["14.12", "Interpretation"],
+    ["14.13", "No Third Party Beneficiaries"],
+    ["14.14", "English Language"],
+    ["14.15", "Counterparts"],
+    ["14.16", "Further Actions"]
+  ],
+  "PerformanceSportsBrandsInc_20110909_S-1_EX-10.10_7220214_EX-10.10_Endorsement Agreement.html": [
+    ["Paragraph", "Page"],
+    ["1.", "Definitions", "3"],
+    ["2.", "Term", "4"],
+    ["3.", "Grant of License and Exclusivity", "4"],
+    ["4.", "Retention of Rights", "4"],
+    ["5.", "Appearances", "4"],
+    ["6.", "Compensation", "5"],
+    ["7.", "Supply of Endorsed Products", "6"],
+    ["8.", "Approval of Advertising", "7"],
+    ["9.", "Ownership", "8"],
+    ["10.", "SAG and/or AFTRA", "8"],
+    ["11.", "Standards", "8"],
+    ["12.", "Events of Default", "8"],
+    ["13.", "Termination/Remedies", "9"],
+    ["14.", "Companys Debts", "9"],
+    ["15.", "Indemnification", "9"],
+    ["16.", "Insurance", "9"],
+    ["17.", "Waiver", "9"],
+    ["18.", "Notices", "10"],
+    ["19.", "Assignment", "10"],
+    ["20.", "Independent Contractor", "10"],
+    ["21.", "Joint Venture", "10"],
+    ["22.", "Governing Law", "10"],
+    ["23", "Entire Agreement", "10"],
+    ["24.", "Amendments", "10"],
+    ["25.", "Authority", "11"],
+    ["26.", "Severability", "11"],
+    ["27.", "Compliance with Laws", "11"],
+    ["28.", "Attorneys Fees and Costs", "11"],
+    ["29.", "Force Majeure", "11"],
+    ["30.", "Confidentiality", "11"],
+    ["31.", "Counterparts", "11"],
+    ["1.", "Definitions. As used herein, the following terms shall be defined as set forth below:"],
+    [
+      "a.",
+      "Contract Period shall mean that period of time from February 21, 2011 through December 31, 2012."
+    ],
+    [
+      "b.",
+      "Contract Year shall mean the specific period of time during the Contract Period as more specifically set forth below:"
+    ],
+    ["Contract Year 2011 (2/21/11 - 12/31/11)"],
+    ["Contract Year 2012 (1/1/12- 12/31/12)"],
+    ["c.", "Contract Territory shall mean the world."],
+    [
+      "d.",
+      "Norths Likeness shall mean and include Norths name, image, photograph, voice, initials, signature, biographical information, and persona."
+    ],
+    [
+      "f.",
+      "Norths Endorsement shall mean and include Norths public statements and comments about Companys Product."
+    ],
+    [
+      "g.",
+      "Endorsed Product(s) shall only mean and include Companys irons, woods, wedges and putters."
+    ],
+    [
+      "2.",
+      "Term. The Term of this Agreement shall be for the Contract Period unless it is terminated or extended as set forth in this Agreement."
+    ],
+    [
+      "3.",
+      "Grant of License and Exclusivity. Subject to the terms set forth in this Agreement, North hereby grants to Company the right and privilege to use Norths Likeness and Norths Endorsement during the Term and within the Contract Territory in all reasonable forms of advertising including, but not limited to television (including the infomercial format), radio, print advertising, brochures, pamphlets, product packaging, point-of-purchase materials, Companys web-site and a demonstration video (hereinafter referred to as Advertising Materials) in connection with Companys advertisement and sale of the Endorsed Product only. During the Term of this Agreement and within the Contract Territory, North agrees not to enter into an agreement with another company or entity for the purpose of endorsing or promoting products similar to the Endorsed Products. Upon the expiration or termination of this Agreement, Company shall be prohibited from using or distributing any new or existing Advertising Materials using Norths Likeness and Norths Endorsement except for Endorsed Product with Norths Likeness and/or Norths Endorsement on the packaging that is already in the channel of retail distribution. Company shall be prohibited from selling or shipping any new Endorsed Product with Norths Likeness and/or Norths Endorsement on the packaging upon the expiration or termination of this Agreement."
+    ],
+    [
+      "4.",
+      "Retention of Rights. All rights not specifically granted or licensed to Company hereunder shall be reserved and retained by North and may be utilized or licensed by North to any third parties in any manner which is not in contravention of this Agreement."
+    ],
+    ["5.", "Appearances."],
+    ["a.", "Production Appearances."],
+    [
+      "i.",
+      "Contract Year 2011. North agrees to make one (1) Production Appearance on behalf of Company during Contract Year 2011 for the purpose of producing the following: (1) one 30-minute infomercial; (2) one 30-second television commercial; (3) one demonstration dvd on how to use the Endorsed Product. (4) product testimonials and (5) still photographs for print advertisements and packaging (hereinafter referred to as Production Appearance). Said Production Appearance shall take place on February 22 & 23, 2011 in or around Phoenix, AZ. The Production Appearance shall be approximately nine (9) hours in duration on February 22nd and five (5) hours in duration on February 23rd. During such Production Appearance, North shall be permitted to wear the apparel of his choice."
+    ],
+    [
+      "ii.",
+      "Contract Year 2012. North agrees to make one (1) Production Appearance on behalf of Company during Contract Year 2012 for the purpose of producing either new or updated Advertising Materials. Said Production Appearance shall take place at a mutually agreed upon time and location.The Production Appearance shall be approximately nine (9) hours in duration on the first day and five (5) hours in duration on the second day. During such Production Appearance, North shall be permitted to wear the apparel of his choice."
+    ],
+    [
+      "b.",
+      "Additional Production/Promotional Appearances. If requested by Company, North agrees to use reasonable effort to make Additional Production/Promotional Appearances on behalf of Company (hereinafter referred to as Additional Production/Promotional Appearances). Should Company request for North to conduct Additional Production/Promotional Appearances and North agrees to appear, Company shall pay North an additional fee for such appearance(s) as set forth in paragraph 6.d. below. North has no obligation to make such appearance."
+    ],
+    [
+      "c.",
+      "Voice-Over Appearances. If requested by Company, North shall make one (1) voice over appearance during the Term. The voice over appearance shall take place at Norths personal residence or at another mutually agreed upon location in Wisconsin, and shall not exceed two (2) hours in duration."
+    ],
+    [
+      "d.",
+      "Promotional Appearance. If requested by Company, North agrees to make one (1) promotional appearance each Contract Year during the Term at certain events to promote the Endorsed Products. Said appearance shall be approximately three (3) hours in duration."
+    ],
+    [
+      "e.",
+      "Promotion/Media Activities. North will use reasonable efforts to mention the benefits of Companys Endorsed Products when North is being interviewed or North is participating in Public Events as defined below."
+    ],
+    [
+      "f.",
+      "Expenses. If travel is necessary to provide the services set forth in this Agreement, Company shall provide or reimburse all such travel expenses of North, including round-trip first-class airfare on the airline of Norths choice, first-class hotel accommodations, reasonable meal and ground transportation expenses. Company shall deliver the airline tickets to North at least seven (7) days prior to the scheduled appearance, and reimburse North for other such expenses within ten (10) days after receipt of the expense receipts."
+    ],
+    [
+      "g.",
+      "Scheduling. All appearances shall be scheduled on dates, times and locations that are mutually agreed upon by Company and North. All such appearances shall be scheduled through Norths duly authorized agent for this projectFidelity Sports Group, LLC."
+    ],
+    [
+      "6.",
+      "Use of F2 Wedges/Using F2 Golf Bag. During the Contract Period and within the Contract Territory, North agrees to:"
+    ],
+    [
+      "a.",
+      "Wedges. Use Companys F2 branded wedges when competing professionally, conducting public clinics or outings, participating in public golf events and when appearing at other public functions where it is appropriate to use or have golf clubs at such events (herein Public Events)."
+    ],
+    [
+      "b.",
+      "Golf Bag. Use and carry Companys F2 branded golf bag at all Public Events as defined immediately above. North shall have the right to place a maximum of two (2) non-competitive third party sponsor names/logos that are of a reasonable size on the belly portion of the F2 branded golf bag."
+    ],
+    [
+      "c.",
+      "Irons, Woods, Putter. Use reasonable efforts to use F2 branded irons, woods and putter at all Public Events. For purposes of clarification, North shall not be required to use F2 branded irons, woods and putters."
+    ],
+    ["7.", "Compensation."],
+    [
+      "a.",
+      "Guaranteed Service Fee and Marketing Retainer. In consideration for the rights, services and benefits granted by North hereunder, Company agrees to pay North a non-refundable Guaranteed Service Fee and Marketing Retainer (hereinafter referred to as Guaranteed Fee) of fifty-five thousand dollars ($55,000USD) in Contract Year 2011 and seventy thousand dollars ($70,000USD) in Contract Year 2012."
+    ],
+    [
+      "(i)",
+      "Twenty-Five thousand dollars ($25,000USD) on or before two days after this Agreement is fully executed."
+    ],
+    ["(ii)", "Fifteen thousand dollars ($15,000USD) on or before July 1, 2011."],
+    ["(iii)", "Fifteen thousand dollars ($ 15,000USD) on or before November 1, 2011."],
+    ["(i)", "Twenty-Five thousand dollars ($25,000USD) on or before February 1, 2012"],
+    ["(ii)", "Twenty-Five thousand dollars ($25,000USD) on or before July 1, 2012"],
+    ["(iii)", "Twenty thousand dollars ($20,000USD) on or before November 1, 2012"],
+    [
+      "b.",
+      "Royalties. In addition to payments due North by Company as set forth in paragraphs 7.a. above, Company further agrees to pay North a one percent (1%) royalty on all Gross Revenue generated from the sale of all Company Products (herein Royalties)."
+    ],
+    ["c.", "Payment of Royalties/Statement of Accounts."],
+    [
+      "(i)",
+      "Company agrees to pay all royalties due as set forth in section 7.b. above on or before thirty (30) days following the end of each quarterly period during the Contract Period. The quarterly royalty payment shall be accompanied by a statement of account indicating the quantities of Products sold, the Gross Revenue generated from all sales of the Product where the sales were derived from (i.e. direct sales or retail sales) and the royalty payment that is due to North."
+    ],
+    [
+      "(ii)",
+      "Company shall keep, at its principal office, 1021 N. Sepulveda Blvd., Suite G, Manhattan Beach, CA 90266, a complete and accurate set of books and records maintained in accordance with generally accepted accounting principles and business practices. Said books and records shall be maintained for a two (2) year period following the expiration or termination of this Agreement. Company shall make said books available to North or Norths representative on reasonable notice during the Term of this Agreement and the two (2) year period immediately following thereafter. The cost of any and all inspections shall be paid by North, unless an inspection shows an under-reporting or under-payment of more than five-percent (5%) for any quarterly period, in which event Company shall reimburse North for all such inspection costs."
+    ],
+    [
+      "d.",
+      "Additional Production/Promotional Appearances Fee. In addition to the amounts payable by Company to North set forth in paragraph 7.a. and 7.b. above, and should Company request for North to make Additional Production/Promotional Appearances, Company further agrees to pay North a mutually agreed upon fee for each Additional Production/Promotional Appearance conducted by North. All compensation to be paid to North for Additional Production/Promotional Appearances shall be due and payable to North prior to each scheduled Additional Production/Promotional Appearance."
+    ],
+    [
+      "e.",
+      "Form of Payment. All payments hereunder shall be made payable to the order of Fidelity Sports Group, LLC, as agent for Andy North and shall be paid via check or wire transfer. If by wire transfer, then direct payment to the following bank account:"
+    ],
+    [
+      "f.",
+      "Late Payments. Amounts not received within ten (10) days following their respective due dates shall be assessed a late charge equal to one and one-half percent (1 _%) per month of the overdue amount until paid, commencing on the eleventh day."
+    ],
+    [
+      "g.",
+      "Supply of Endorsed Products. Company shall deliver to North, at no charge, and in a timely fashion, a reasonable number of Endorsed Products for Norths personal use each Contract Year during the Contract Period. All postage expenses associated with the delivery of the Endorsed Products shall be borne by Company."
+    ],
+    ["8.", "Approval of Advertising."],
+    [
+      "a.",
+      "Company agrees that it will not use Norths Likeness or Norths Endorsement hereunder unless and until all Advertising Materials and their intended use has been approved by North. North agrees that any Advertising Materials submitted for approval as provided herein may be deemed by Company to have been approved hereunder if the same is not disapproved by North within seven (7) business days after receipt thereof. North agrees that any Advertising Materials submitted hereunder will not be unreasonably disapproved and, if it is disapproved, that Company will be advised of the specific grounds for the disapproval. Company shall not use such disapproved Advertising Materials until it has written approval from North."
+    ],
+    [
+      "b.",
+      "Should Company utilize stock photographs of North, Company agrees to use current photographs and not to add, delete, alter, amend or modify any existing names, logos, designs, trademarks or other indicia of any other sponsor of North which appear in the portion of the photograph used by Company."
+    ],
+    [
+      "c.",
+      "Company acknowledges and agrees that the script and layout of the Advertising Materials, including, but not limited to the infomercial, shall be reasonably compatible with Norths personality and/or style. Should the Advertising Materials be approved as set forth in Section 8.a. above, the Advertising Materials shall reflect Norths personal experience and/or testimonial concerning the Product. Such Advertising Material shall be deemed to be Norths representation and warranty that such testimonial copy in fact reflects Norths personal experience with and opinion of the Endorsed Product."
+    ],
+    [
+      "9.",
+      "Ownership. All materials, in any form whatsoever, relating to the Advertising Materials will be and shall remain the absolute property of Company. North acknowledge that they do not now have and in the future will assert no right, title, or interest of any kind or nature whatsoever, in or to any component of the Advertising Materials. Furthermore, subject to Norths approval as set forth in section 8 above, Company shall have the right at any time during the Term of this Agreement to make any revisions to the Advertising Materials or prepare versions of all or any part of the Advertising Materials to conform to the requirements of individual markets or customers."
+    ],
+    [
+      "10.",
+      "SAG and/or AFTRA. In the event of any of the Advertising Materials contemplated herein come within the purview or jurisdiction of the Screen Actors Guild (SAG) and/or the American Federation of Television and Radio Artists (AFTRA), and North is required for any reason to become a member thereof, North agrees to join such union(s), and Company agrees to pay any and all expenses whatsoever including all dues, assessments, or contributions necessary in order for North to render his services hereunder, including any and all pension and health contributions or assessments that may be required by such entities. Norths participation in any such Advertising Materials pursuant to this paragraph in the Agreement shall not result in any expenses or diminution of the Guaranteed Fee or Royalties of this Endorsement Agreement whatsoever to North."
+    ],
+    [
+      "11.",
+      "Standards. Company and North shall at all times deal with each other in good faith and strive to maintain and enhance each others positive image and reputation. North and Company shall act at all times in a manner that shall not be in contravention of public morals and conventions."
+    ],
+    ["12.", "Event of Default."],
+    [
+      "a.",
+      "It shall be an event of default hereunder by North if i) North shall materially breach this Agreement and such breach remains uncured for a period of thirty (30) days after written notice thereof from Company to North, or ii) North shall be indicted for a felony involving moral turpitude which brings disrepute to the Company."
+    ],
+    [
+      "b.",
+      "It shall be an event of default hereunder by Company if i) Company fails to pay all fees when due and payable pursuant to this Agreement, ii) Company is adjudicated as insolvent or declares bankruptcy, or iii) Company shall materially breach this Agreement and such breach remains uncured for a period of thirty (30) days after written notice thereof from North to Company."
+    ],
+    [
+      "13.",
+      "Termination/Remedies. Either party shall have the right to terminate this Agreement upon the occurrence of an event of default by the other party by providing written notice thereof to the defaulting party. All rights and remedies of the parties herein specified are cumulative and are in addition to, not in limitation of, any rights and remedies the parties may have at law or in equity and all such rights and remedies may be exercised singularly or concurrently."
+    ],
+    [
+      "14.",
+      "Companys Debts. North shall not be liable for any debts or obligations of Company resulting directly or indirectly from the aforesaid use of the Norths Likeness, Norths Endorsement or the services provided by North. Company shall make no representation, or in any way imply in its actions or failure to act, that North is on will be liablefor debts or obligations of Company."
+    ],
+    [
+      "15.",
+      "Indemnification. Company shall indemnify, defend, and hold harmless North and its employees, officers, agents, and representatives from and against any and all claims, suits, assessments, losses, obligations, penalties, charges, actions, damages, liabilities, costs, and expenses including reasonable attorneys fees whether incurred at trial or in connection with any review by appeal or certiorari of both the trial and appellate court levels (collectively referred to as Claims) arising out of or in connection with:"
+    ],
+    [
+      "a",
+      "Any claim or action for negligent or intentional misconduct of Company in relation to the advertisement, promotion, or sale of the Endorsed Product, or Companys use of Norths Likeness or Norths Endorsement to advertise, promote, distribute, or sell the Endorsed Product; or"
+    ],
+    [
+      "b.",
+      "Any claim or action for personal injury, death, or property damage resulting from a customers use of the Endorsed Product; or"
+    ],
+    [
+      "c.",
+      "Any claims or action for the breach by Company of any of its representations and warranties set forth in this Agreement."
+    ],
+    [
+      "16.",
+      "Insurance. Company agrees, at its own expense, to obtain and maintain general comprehensive liability insurance, with an insurance company that has a rating of A++ (per AM Best), insuring North as a named insured party, against any claims, suits, losses and damages arising out of or caused by Companys use of Norths Likeness. Norths Endorsement or Norths services hereunder. Such insurance policy shall be maintained with limits of not less than two million dollars ($2,000,000). Said policy of insurance shall remain in force for the duration of this Agreement. A copy of such insurance policy shall be provided to North within thirty (30) days after execution of this Agreement."
+    ],
+    [
+      "17.",
+      "Waiver. The failure of either party at any time or times to demand strict performance of the other party of any of the terms, covenants or conditions set forth herein shall not be construed as a continuing waiver or relinquishment thereof and each party may at any time demand strict and complete performance by the other party."
+    ],
+    [
+      "18.",
+      "Notices. All notices, claims, certificates, requests, demands and other communication hereunder shall be made in writing and will be deemed to have been duly given if delivered by hand, via facsimile transmission, or mailed and addressed as follows:"
+    ],
+    ["To Company:", "Golfers Incorporated"],
+    ["1021 N. Sepulveda Blvd., Suite G"],
+    ["Manhattan Beach, CA 90266"],
+    ["Attention: Mike or Steve Abram"],
+    ["To North:", "Andy North"],
+    ["c/o Fidelity Sports Group, LLC"],
+    ["514 Broadway Avenue"],
+    ["Orlando, Florida 32803"],
+    ["Attention: David J. Moorman, President & CEO"],
+    [
+      "19.",
+      "Assignment. Neither party to this Agreement shall assign the rights and benefits herein without the prior written consent of the other party."
+    ],
+    [
+      "20.",
+      "Independent Contractor. Company has engaged North for certain rights which are set forth in this Agreement, and Norths relationship to Company, and Companys relationship to North, shall at all times be that of an independent contractor."
+    ],
+    [
+      "21.",
+      "Joint Venture. This Agreement does not constitute a partnership or joint venture between North and Company. No party shall have the right to obligate or bind the other party in any manner whatsoever."
+    ],
+    [
+      "22.",
+      "Governing Law. The Agreement shall be governed by and construed under the laws of the State of Florida in the United States of America, and venue for any such legal action shall be in the Circuit Court or County Court in Orlando, FL or the U.S. District Court having jurisdiction over Orlando, FL."
+    ],
+    [
+      "23.",
+      "Entire Agreement. This writing constitutes the entire agreement and understanding between the parties with respect to its subject matter. This Agreement supersedes all prior or contemporaneous agreements and understandings between the parties with respect to its subject matter."
+    ],
+    [
+      "24.",
+      "Amendments. This Agreement may be amended only by a written instrument duly executed by both parties."
+    ],
+    [
+      "25.",
+      "Authority. Each party warrants and represents to the other that it has the full right, power and authority to enter into and perform this Agreement, to make the covenants and representations contained in this Agreement and further, that the execution, delivery and performance of this Agreement will not violate, conflict with, or constitute a default under, any contract, agreement or undertaking to which it is a party or by which it is bound."
+    ],
+    [
+      "26.",
+      "Severability. The illegality, unenforceability or invalidity of any term, clause or provision of this Agreement shall not affect any other term, clause or provision hereof, and this Agreement shall continue in full force and effect, and be construed and enforced, as if such provision had not been included."
+    ],
+    [
+      "27.",
+      "Compliance with Laws. Company represents and warrants to North that it will comply with all rules, regulations, laws, orders, decrees and ordinances of the United States, each state and political subdivision thereof, and each and every foreign country having legal jurisdiction over any aspect of Companys activities under this Agreement, including, but not limited to, the use of Norths Likeness in advertisements for and on behalf of the Company."
+    ],
+    [
+      "28.",
+      "Attorneys Fees and Costs. The prevailing party in any litigation or other proceeding between the parties arising out of the interpretation, application, or enforcement of any provision of this Agreement shall be entitled to recover all of its reasonable fees, court costs, and expenses, including fees for attorneys, whether incurred at trial or in connection with any review by appeal or certiorari, accountants, and other professionals."
+    ],
+    [
+      "29.",
+      "Force Majeure. In the event any of the appearances set forth in this Agreement are cancelled or delayed due to matters of Force Majeure, as such term is defined below, Company and North shall use their reasonable efforts to reschedule such appearance as soon as possible following such cancellation or delay. As used herein, the term Force Majeure shall mean war, civil unrest, acts of God, unusually severe weather, environmental matters, failure of common carrier, governmental action, labor disputes, casualty, illness, injury and/or emergency."
+    ],
+    [
+      "30.",
+      "Confidentiality. The compensation terms of this Agreement hereunder and any financial information collected through the review of Companys records or statements shall be treated by the parties as confidential information. The parties hereto agree not to disclose any such terms, amounts or information to any other person or entity whatsoever other than its attorneys, accountants, or as required by law."
+    ],
+    [
+      "31.",
+      "Counterparts. This Agreement may be executed in one or more counterparts, each of which shall be deemed an original, but all of which together shall constitute one and the same instrument."
+    ],
+    ["GOLFERS INCORPORATED:"],
+    ["/s/ Michael F. Abram", "WITNESS:", "/s/ [ILLEGIBLE]"],
+    ["By: Michael F. Abram"],
+    ["Its: President"],
+    ["Date: 2-21-11"],
+    ["/s/ Andy North", "WITNESS:", "/s/ [ILLEGIBLE]"],
+    ["Andy North"],
+    ["Date: 2-20-11"]
+  ],
+  "HarpoonTherapeuticsInc_20200312_10-K_EX-10.18_12051356_EX-10.18_Development Agreement.html": [
+    ["ARTICLE 1 DEFINITIONS", "1"],
+    ["ARTICLE 2 COLLABORATION MANAGEMENT", "18"],
+    ["ARTICLE 3 DEVELOPMENT AND REGULATORY", "21"],
+    ["ARTICLE 4 COMMERCIALIZATION", "30"],
+    ["ARTICLE 5 GRANT OF RIGHTS", "33"],
+    ["ARTICLE 6 PAYMENTS AND RECORDS", "36"],
+    ["ARTICLE 7 INTELLECTUAL PROPERTY", "42"],
+    ["ARTICLE 8 PHARMACOVIGILANCE AND SAFETY", "50"],
+    ["ARTICLE 9 Confidentiality AND Non-Disclosure", "51"],
+    ["ARTICLE 10 REPRESENTATIONS AND Warranties", "55"],
+    ["ARTICLE 11 Indemnity", "60"],
+    ["ARTICLE 12 Term and Termination", "62"],
+    ["ARTICLE 13 Miscellaneous", "68"]
+  ],
+  "NUVEEN - REMARKETING AGREEMENT.html": [
+    ["Page"],
+    ["Section1.", "Definitions", "1"],
+    ["Section2.", "Appointment and Obligations of the Remarketing Agent", "3"],
+    [
+      "Section3.",
+      "Representations, Warranties and Covenants of the Remarketing Agent and the Fund",
+      "6"
+    ],
+    ["Section4.", "Fees and Expenses", "7"],
+    ["Section5.", "Resignation, Suspension and Removal of the Remarketing Agent", "7"],
+    ["Section6.", "Dealing in the VRRM-MFP Shares", "8"],
+    ["Section7.", "Information", "8"],
+    ["Section8.", "Conditions to Obligations of the Remarketing Agent", "9"],
+    ["Section9.", "Indemnification", "10"],
+    ["Section10.", "Termination of Remarketing Agreement", "13"],
+    ["Section11.", "Remarketing Agents Performance; Duty of Care", "13"],
+    ["Section12.", "Amendment, Supplement or Modification of Agreements", "13"],
+    ["Section13.", "Books and Records", "14"],
+    ["Section14.", "Governing Law", "14"],
+    ["Section15.", "Waiver of Jury Trial", "14"],
+    ["Section16.", "Certain Provisions to Survive Termination of Agreement", "14"],
+    ["Section17.", "Successors and Assigns", "14"],
+    ["Section18.", "Headings", "15"],
+    ["Section19.", "Severability", "15"],
+    ["Section20.", "Counterparts", "15"],
+    ["Section21.", "Remarketing Agent Not Acting as Underwriter", "15"],
+    ["Section22.", "Amendment", "15"],
+    ["Page"],
+    ["Section23.", "Benefits", "15"],
+    ["Section24.", "Notices and Wire Instructions", "15"],
+    ["Section25.", "Liability of Officers, Trustees and Shareholders", "16"],
+    ["Section26.", "Nonpetition Covenant", "16"],
+    ["NUVEEN AMT-FREE QUALITY MUNICIPAL INCOME FUND"],
+    ["By", "/S/ MARK L. WINGET"],
+    ["Name:", "Mark L. Winget"],
+    ["Title:", "Vice President"],
+    ["NUVEEN FUND ADVISORS, LLC"],
+    ["By", "/S/ GIFFORD R. ZIMMERMAN"],
+    ["Name:", "Gifford R. Zimmerman"],
+    ["Title:", "Managing Director, Co-General Counsel and Assistant Secretary"],
+    ["BARCLAYS CAPITAL INC."],
+    ["By", "/S/ MICHAEL WHANG"],
+    ["Name:", "Michael Whang"],
+    ["Title:", "Director"],
+    [
+      "VRRMMFPSharesSeries",
+      "CUSIPNumber",
+      "NumberofVRRMMFPSharestenderedforremarketing(theDesignatedAmount)1"
+    ],
+    ["D", "670657774"],
+    [
+      "1",
+      "VRRMMFP Shares may be tendered only in whole shares and, except as otherwise permitted by the Remarketing Agent, in minimum amounts of twenty-five (25) shares and multiples of five (5) shares in excess thereof."
+    ],
+    ["Dated:____________________________"],
+    ["[Complete applicable signature block below.]"],
+    ["Print name of Beneficial Owner"],
+    ["By:"],
+    ["Name:"],
+    ["Title:"],
+    ["[OR]"],
+    ["Print name of Agent Member"],
+    ["By:"],
+    ["Name:"],
+    ["Title:"],
+    [
+      "Re:",
+      "Nuveen AMT-Free Quality Municipal Income Fund Series D MuniFund Preferred Shares (the VRRM-MFP Shares)"
+    ],
+    ["Populate", "fields in the applicable section; delete inapplicable sections."],
+    [
+      "(i)",
+      "A purchaser or purchasers have been identified for the purchase of all of the Tendered VRRM-MFP Shares on the Purchase Date."
+    ],
+    ["(ii)", "Number of Tendered VRRM-MFP Shares sold, subject to settlement: ."],
+    ["(iii)", "The Purchase Date will be: ."],
+    ["(iv)", "The Purchase Price per Tendered VRRM-MFP Share is: ."],
+    [
+      "(i)",
+      "A purchaser or purchasers have been identified for the purchase of all of the VRRM-MFP Shares on the Remarketing Date."
+    ],
+    ["(ii)", "Number of VRRM-MFP Shares sold, subject to settlement: ."],
+    ["(iii)", "The Remarketing Date will be: ."],
+    [
+      "(iv)",
+      "The Regular Dividend Rate to be applicable to the VRRM-MFP Shares on the Remarketing Date will be: ."
+    ],
+    [
+      "(v)",
+      "All VRRM-MFP Shares will be subject to mandatory tender for purchase on the Remarketing Date at a Purchase Price per VRRM-MFP Share of: ."
+    ],
+    [
+      "(i)",
+      "A purchaser or purchasers have been identified for the purchase of all of the VRRM-MFP Shares on the New Mode Commencement Date."
+    ],
+    ["(ii)", "Number of VRRM-MFP Shares sold, subject to settlement: ."],
+    ["(iii)", "The New Mode Commencement Date will be: ."],
+    [
+      "(iv)",
+      "The Regular Dividend Rate to be applicable to the VRRM-MFP Shares on the New Mode Commencement Date will be:."
+    ],
+    [
+      "(v)",
+      "All VRRM-MFP Shares will be subject to mandatory tender for purchase on the New Mode Commencement Date at a Purchase Price per share of:"
+    ],
+    ["BARCLAYS CAPITAL INC.,"],
+    ["as Remarketing Agent"],
+    ["By:"],
+    ["Name:"],
+    ["Title:"],
+    [
+      "*",
+      "NOTE: None of the Fund, the Remarketing Agent or the Calculation and Paying Agent will be responsible for the selection or use of the CUSIP Numbers selected, nor is any representation made as to its correctness indicated in any notice or as printed on any VRRM-MFP Share certificate. It is included solely as a convenience to VRRM-MFP Shareholders."
+    ],
+    ["Dated:"],
+    ["BARCLAYS CAPITAL INC., as Remarketing Agent"],
+    ["By:"],
+    ["Name:"],
+    ["Title:"],
+    ["Cc:", "The Bank of New York Mellon"],
+    ["Nuveen AMT-Free Quality Municipal Income Fund"],
+    [
+      "*",
+      "NOTE: None of the Fund, the Remarketing Agent or the Calculation and Paying Agent will be responsible for the selection or use of the CUSIP Numbers selected, nor is any representation made as to its correctness indicated in any notice or as printed on any VRRM-MFP Share certificate. It is included solely as a convenience to VRRM-MFP Shareholders."
+    ],
+    ["[Complete applicable signature block below.]"],
+    ["Print name of Beneficial Owner"],
+    ["By:"],
+    ["Name:"],
+    ["Title:"],
+    ["[OR]"],
+    ["Print name of Agent Member"],
+    ["By:"],
+    ["Name:"],
+    ["Title:"],
+    ["Cc:", "The Bank of New York Mellon"],
+    ["Nuveen AMT-Free Quality Municipal Income Fund"]
+  ],
+  "OTISWORLDWIDECORP_04_03_2020-EX-10.4-INTELLECTUAL PROPERTY AGREEMENT by and among UNITED TECHNOLOGIES CORPORATION, OTIS WORLDWIDE CORPORATION and CARRIER ~1.html": [
+    ["ARTICLE I DEFINITIONS", "2"],
+    ["1.1", "Defined Terms", "2"],
+    ["ARTICLE II ASSIGNMENT OF SOLELY OWNED INTELLECTUAL PROPERTY RIGHTS", "7"],
+    ["2.1", "Assigned Intellectual Property Rights", "7"],
+    ["ARTICLE III LICENSING OF INTELLECTUAL PROPERTY RIGHTS", "8"],
+    ["3.1", "Licensed Intellectual Property Rights", "8"],
+    ["3.2", "Reserved Intellectual Property Rights", "10"],
+    ["3.3", "No Rescission", "10"],
+    ["ARTICLE IV TRADEMARKS", "10"],
+    ["4.1", "Ownership of United Technologies Trademarks", "10"],
+    ["4.2", "Use of United Technologies Trademarks", "11"],
+    ["4.3", "Special Trademark Provisions.", "12"],
+    ["ARTICLE V EXCLUDED AGREEMENTS", "12"],
+    ["5.1", "No Change to Excluded Agreements", "12"],
+    ["ARTICLE VI CONFIDENTIALITY", "12"],
+    ["6.1", "Received Information and Materials", "12"],
+    ["6.2", "Confidential Information", "12"],
+    ["6.3", "Obligations", "13"],
+    ["6.4", "Termination of UTC NDA", "13"],
+    ["ARTICLE VII LIMITATIONS AND DISCLAIMERS", "13"],
+    ["7.1", "Subsequent Delivery of Intellectual Property Rights", "13"],
+    ["7.2", "No Additional Obligations", "14"],
+    ["7.3", "DISCLAIMER", "14"],
+    ["7.4", "Limitations of Liability", "14"],
+    ["ARTICLE VIII GOVERNING LAW AND DISPUTE RESOLUTION", "15"],
+    ["8.1", "Governing Law", "15"],
+    ["8.2", "Alternative Dispute Resolution", "15"],
+    ["8.3", "Confidentiality", "13"],
+    ["8.4", "Equitable Relief", "13"],
+    ["ARTICLE IX GENERAL PROVISIONS", "16"],
+    ["9.1", "Entire Agreement; Conflict Among Agreements", "16"],
+    ["9.2", "Assignment and Change of Control; Successor and Assigns", "16"],
+    ["9.3", "Bankruptcy", "17"],
+    ["9.4", "Amendments and Waivers", "17"],
+    ["9.5", "Notice", "18"],
+    ["9.6", "Severability", "18"],
+    ["9.7", "Counterparts", "18"],
+    ["9.8", "Further Assurances", "18"],
+    ["9.9", "Interpretation", "19"],
+    ["To UTC:"],
+    ["United Technologies Corporation"],
+    ["10 Farm Springs"],
+    ["Farmington, CT 06302"],
+    ["Attention: Chief Intellectual Property Counsel"],
+    ["To Otis:"],
+    ["Otis Worldwide Corporation"],
+    ["One Carrier Place"],
+    ["Farmington, CT 06032"],
+    ["Attention: Chief Intellectual Property Counsel"],
+    ["To Carrier:"],
+    ["Carrier Global Corporation"],
+    ["13995 Pasteur Boulevard"],
+    ["Palm Beach Gardens, FL 33418"],
+    ["Attention: Chief Intellectual Property Counsel"],
+    ["UNITED TECHNOLOGIES CORPORATION"],
+    ["By:", "/s/ Michael R. Dumais"],
+    ["Name:", "Michael R. Dumais"],
+    ["Title:", "Executive Vice President, Operations & Strategy"],
+    ["OTIS WORLDWIDE CORPORATION"],
+    ["By:", "/s/ Michael P. Ryan"],
+    ["Name:", "Michael P. Ryan"],
+    ["Title:", "Vice President, Controller"],
+    ["CARRIER GLOBAL CORPORATION"],
+    ["By:", "/s/ Kyle Crockett"],
+    ["Name:", "Kyle Crockett"],
+    ["Title:", "Vice President, Controller"]
+  ],
+  "ParatekPharmaceuticalsInc_20170505_10-KA_EX-10.29_10323872_EX-10.29_Outsourcing Agreement.html": [
+    ["Article 1", "Interpretation", "6"],
+    ["1.1", "Definitions", "6"],
+    ["1.2", "Other Definitions", "10"],
+    ["1.3", "Currency", "10"],
+    ["1.4", "Headings", "10"],
+    ["1.5", "Exhibits", "10"],
+    ["1.6", "Applicable Law", "10"],
+    ["Article 2", "Term", "10"],
+    ["2.1", "Term"],
+    ["2.2", "Effect of Expiration on Purchase Orders", "11"],
+    ["Article 3", "Supply of Product", "11"],
+    ["3.1", "Supply of Product"],
+    ["3.2", "Manufacturing Services", "12"],
+    ["3.3", "Supply of Materials and Customer Material", "12"],
+    ["3.4", "Production Capacity", "14"],
+    ["3.5", "Processing Changes", "14"],
+    ["3.6", "Monitoring of Facilities", "14"],
+    ["3.7", "Subcontracting", "15"],
+    ["3.8", "[* * *]"],
+    ["3.9", "[* * *]"],
+    ["3.1", "Territory Expansion", "15"],
+    ["3.11", "Supply to Customer Licensees", "16"],
+    ["3.12", "Alternative Supply", "16"],
+    ["Article 4", "Forecasts", "16"],
+    ["4.1", "Short Term Rolling Forecasts", "16"],
+    ["4.2", "Long Term Forecasts", "17"],
+    ["Article 5", "Testing and Samples", "17"],
+    ["5.1", "Release Testing", "17"],
+    ["5.2", "Additional Release Testing", "18"],
+    ["5.3", "Retention Samples", "18"],
+    ["5.4", "Stability Testing", "18"],
+    ["5.5", "Reference Standards", "18"],
+    ["CONFIDENTIAL", "Page 2 of 47"],
+    ["5.6", "Preparation of Process Qualification", "18"],
+    ["Article 6", "Purchase Orders", "19"],
+    ["6.1", "Placement of Purchase Orders", "19"],
+    ["6.2", "Acceptance of Orders", "19"],
+    ["6.3", "Delays", "19"],
+    ["6.4", "Cancellation of Purchase Orders", "20"],
+    ["6.5", "Material Failure of Supply", "20"],
+    ["6.6", "Services", "20"],
+    ["Article 7", "Shipment of Product", "20"],
+    ["7.1", "Storage of Product", "20"],
+    ["7.2", "Release and Shipment of Product", "21"],
+    ["7.3", "Documentation", "21"],
+    ["7.4", "Steering Committee", "21"],
+    ["Article 8", "Acceptance of Shipments", "22"],
+    ["8.1", "Acceptance of Shipments", "22"],
+    ["8.2", "Dispute of Rejected Product", "22"],
+    ["8.3", "Remedies", "23"],
+    ["Article 9", "Fees", "23"],
+    ["9.1", "Fees", "23"],
+    ["9.2", "Adjustments to Fees", "23"],
+    ["9.3", "Taxes", "24"],
+    ["Article 10", "Invoicing and Payment", "24"],
+    ["10.1", "Issuance of Invoices", "24"],
+    ["10.2", "Invoice Contents", "24"],
+    ["10.3", "Delay of Shipment", "25"],
+    ["10.4", "Payment of Invoices", "25"],
+    ["Article 11", "Intellectual Property", "25"],
+    ["11.1", "Title", "25"],
+    ["11.2", "No Grant of Rights", "25"],
+    ["11.3", "Grant of License by Customer", "26"],
+    ["11.4", "Ownership of Inventions", "26"],
+    ["11.5", "Patents to Inventions", "26"],
+    ["CONFIDENTIAL", "Page 3 of 47"],
+    ["11.6", "No Use of Trademarks", "26"],
+    ["11.7", "[* * *]", "26"],
+    ["Article 12", "Confidentiality & Publicity", "27"],
+    ["12.1", "Obligation of Confidentiality", "27"],
+    ["12.2", "Disclosure with Consent", "27"],
+    ["12.3", "Publicity", "28"],
+    ["12.4", "Disclosure Required by Law", "28"],
+    ["12.5", "Employee Confidentiality and Invention Assignment", "28"],
+    ["12.6", "Duration of Obligation", "28"],
+    ["Article 13", "Representations, Warranties and Covenants", "29"],
+    ["13.1", "Suppliers Representations, Warranties and Covenants", "29"],
+    ["13.2", "Customers Representations, Warranties and Covenants", "30"],
+    ["13.3", "No Other Warranty", "30"],
+    ["13.4", "No Consequential Damages and Limitation of Liability", "31"],
+    ["Article 14", "Indemnification", "31"],
+    ["14.1", "Indemnification of Supplier", "31"],
+    ["14.2", "Indemnification of Customer", "32"],
+    ["14.3", "[* * *]", "32"],
+    ["14.4", "Indemnification Procedure", "32"],
+    ["Article 15", "Insurance", "32"],
+    ["15.1", "Insurance Coverage", "32"],
+    ["15.2", "Evidence of Insurance", "33"],
+    ["Article 16", "Legal and Regulatory", "33"],
+    ["16.1", "Compliance with Laws", "33"],
+    ["16.2", "Maintenance of Records", "33"],
+    ["16.3", "Notice of Reports", "33"],
+    ["16.4", "Drug Master Files", "34"],
+    ["16.5", "Compliance with Regulatory Standards", "34"],
+    ["16.6", "Inspection", "34"],
+    ["Article 17", "Recalls", "34"],
+    ["17.1", "Safety", "34"],
+    ["17.2", "Recalls", "34"],
+    ["CONFIDENTIAL", "Page 4 of 47"],
+    ["17.3", "Suppliers Liability for Recall", "35"],
+    ["17.4", "Customers Liability for Recall", "35"],
+    ["17.5", "Replacement Shipments", "35"],
+    ["Article 18", "Termination", "35"],
+    ["18.1", "Termination", "35"],
+    ["18.2", "Consequences of Termination", "36"],
+    ["18.3", "Return of Samples", "37"],
+    ["18.4", "Return of Confidential Information", "37"],
+    ["18.5", "Survival", "38"],
+    ["Article 19", "Miscellaneous", "38"],
+    ["19.1", "Assignment; Inurement", "38"],
+    ["19.2", "Change of Control", "39"],
+    ["19.3", "Counterparts", "39"],
+    ["19.4", "Dispute Resolution", "39"],
+    ["19.5", "Force Majeure", "39"],
+    ["19.6", "Performance", "40"],
+    ["19.7", "Further Assurances", "40"],
+    ["19.8", "Independent Contractors", "40"],
+    ["19.9", "Injunctions", "40"],
+    ["19.1", "Notices", "40"],
+    ["19.11", "Entire Agreement", "41"],
+    ["19.12", "Severability", "41"],
+    ["19.13", "Waiver", "42"],
+    ["CONFIDENTIAL", "Page 5 of 47"],
+    ["Article 1", "Interpretation"],
+    ["1.1", "Definitions"],
+    ["CONFIDENTIAL", "Page 6 of 47"],
+    ["CONFIDENTIAL", "Page 7 of 47"],
+    ["CONFIDENTIAL", "Page 8 of 47"],
+    ["CONFIDENTIAL", "Page 9 of 47"],
+    ["1.2", "Other Definitions"],
+    ["1.3", "Currency"],
+    ["1.4", "Headings"],
+    ["1.5", "Exhibits"],
+    ["1.6", "Applicable Law"],
+    ["Article 2", "Term"],
+    ["CONFIDENTIAL", "Page 10 of 47"],
+    ["2.1", "Term"],
+    ["2.2", "Effect of Expiration on Purchase Orders"],
+    ["Article 3", "Supply of Product"],
+    ["3.1", "Supply of Product"],
+    ["CONFIDENTIAL", "Page 11 of 47"],
+    ["3.2", "Manufacturing Services"],
+    ["3.3", "Supply of Materials and Customer Material"],
+    ["a)", "Materials"],
+    [
+      "i.",
+      "Supplier shall, at its cost, be responsible for the purchase, planning, supply, control, testing, release and compliance of all Materials (other than Customer Materials unless expressly otherwise set forth in this Agreement) required for the Manufacture of the Product and performance of Services under accepted Purchase Orders."
+    ],
+    [
+      "ii.",
+      "Supplier shall ensure that all Materials (other than Customer Material unless expressly otherwise set forth in this Agreement) used in the Manufacture of the Product and performance of Services shall comply with the specifications mutually agreed by the Parties in writing and applicable requirements of the Quality Agreement."
+    ],
+    [
+      "iii.",
+      "Supplier shall test and inspect all Materials as set forth in the Quality Agreement and Suppliers standard incoming inspection and testing procedures, which at a minimum will include appearance and identity testing."
+    ],
+    ["b)", "Customer Material"],
+    [
+      "i.",
+      "Customer or its designee (for which Customer is responsible) shall, at its cost, be responsible for the planning, supply, control, testing, release and compliance of all Customer Materials supplied to Supplier that are required for the Manufacture of the Product and performance of Services under accepted Purchase Orders. Customer shall ensure that all Customer Materials meet the Customer Material Specifications."
+    ],
+    [
+      "ii.",
+      "Customer or its designee (for which Customer is responsible) shall, at its cost, be responsible for the qualification of suppliers of Customer Materials."
+    ],
+    [
+      "iii.",
+      "Customer or its designee (for which Customer is responsible) shall ensure that all Customer Materials used in the Manufacture of the Product and performance of Services shall meet applicable requirements set forth in the Quality Agreement."
+    ],
+    [
+      "iv.",
+      "Supplier shall test and inspect all Customer Materials in accordance with the Quality Agreement and Suppliers standard incoming inspection and testing procedures. Supplier shall also independently release Customer Materials (but Supplier shall not use any Customer Materials that have not also been released by Customer)."
+    ],
+    [
+      "v.",
+      "Upon receipt of a Purchase Order from Customer, Supplier will inform Customer of the latest delivery date required for Customer Materials [* * *]. Customer will use commercially reasonable efforts to coordinate delivery of Customer Materials by that date according to [* * *]."
+    ],
+    ["CONFIDENTIAL", "Page 12 of 47"],
+    [
+      "vi.",
+      "If Customer is unable to deliver Customer Materials by the date required by Supplier, this will be promptly communicated to Supplier. Supplier will use commercially reasonable efforts to reallocate capacity and accommodate the planned Campaign at a later date. [* * *]Supplier will be released from its obligation under the relevant Purchase Order and any associated penalties regarding delivery date for the corresponding Product.In the event of any such delay in the delivery of Customer Materials to Supplier, the Parties shall negotiate in good faith and agree upon a revised schedule for the supply of Products to Customer or its designee, which revised schedule shall be binding on Supplier in accordance with this Agreement."
+    ],
+    [
+      "vii.",
+      "In the event that Customer Materials delivered to Supplier are found by Supplier to be non-conforming to the Customer Material Specifications at the time of delivery of such Customer Materials to Supplier and Customer challenges this finding, the Parties shall conduct a joint investigation.If Supplier and Customer are unable to resolve the issue of non-compliance then a sample of the relevant Customer Material will be submitted to an independent laboratory reasonably acceptable to both Parties for testing against the Customer Material Specifications, and determination whether or not the Customer Material did not comply with the Customer Material Specifications at the time of delivery to Supplier.The test results of the independent laboratory testing shall be final and binding upon Customer and Supplier, and the fees and expense of such laboratory testing and the out-of-pocket costs reasonably incurred by the Parties in the joint investigation shall be [* * *]In such event, except as set forth in Section 3.3(b)(vi), Supplier shall be released from its obligation with respect to the relevant Purchase Order and any associated penalties regarding a delayed delivery date for the corresponding Product under such Purchase Order.In the event that Customer delivers any such non-conforming Customer Materials, the Parties shall negotiate in good faith and agree upon a revised schedule for the supply of Products to Customer or its designee, which revised schedule shall be binding on Supplier in accordance with this Agreement."
+    ],
+    [
+      "viii.",
+      "Customer will provide Supplier with a Certificate of Analysis, a BSE/TSE statement and a Certificate of Compliance, data on the chemical and physical properties, toxicity, and handling, storing, and shipping information for any Customer Materials (MSDS or equivalent) and any other information that is necessary for the safe handling and transportation of Customer Materials. Customer shall update all of such information provided to Supplier after such updated information becomes available or known to Customer."
+    ],
+    ["CONFIDENTIAL", "Page 13 of 47"],
+    ["3.4", "Production Capacity"],
+    ["3.5", "Processing Changes"],
+    ["3.6", "Monitoring of Facilities"],
+    ["CONFIDENTIAL", "Page 14 of 47"],
+    ["3.7", "Subcontracting"],
+    ["3.8", "[* * *]"],
+    ["3.9", "[* * *]"],
+    ["3.10", "Territory Expansion"],
+    ["CONFIDENTIAL", "Page 15 of 47"],
+    ["3.11", "Supply to Customer Licensees"],
+    ["3.12", "Alternative Supply"],
+    ["Article 4", "Forecasts"],
+    ["4.1", "Short Term Rolling Forecasts"],
+    ["CONFIDENTIAL", "Page 16 of 47"],
+    ["4.2", "Long Term Forecasts"],
+    ["Article 5", "Testing and Samples"],
+    ["5.1", "Release Testing"]
+  ]
+}
