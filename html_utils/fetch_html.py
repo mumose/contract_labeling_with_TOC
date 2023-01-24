@@ -114,8 +114,8 @@ def main():
         if not table:
             print(file)
 
-    data = process_html.extract_labels_to_folder(data, contract_map)
-    print(data)
+    data = process_html.extract_labels_to_folder(data)
+    return data
 
 
 if __name__ == "__main__":

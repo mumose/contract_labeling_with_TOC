@@ -13,7 +13,6 @@ def extract_label_to_json(toc_extracted):
     toc_extracted: list of [str, dict]
       The toc which has been processed to extract each line of the toc.
       This list contains the actual extracted dict as well as the contract title.
-
     """
 
     contract_title = toc_extracted[0]
@@ -81,6 +80,11 @@ def extract_label_to_json(toc_extracted):
             else:
                 # print(n_section, n_subsection, is_subsection.group(), item, contract_title)
                 concat_items = " ".join(item[1:])
+                try:
+                    label_dict[n_section - 1]
+                except:
+                    label_dict[n_section - 1] = ('Miscellanous Subsections', {})
+
                 label_dict[n_section - 1][1][n_subsection] = (
                     f"{is_subsection.group()} {concat_items}",
                     {},
@@ -91,32 +95,28 @@ def extract_label_to_json(toc_extracted):
     return contract_title, label_dict
 
 
-def extract_labels_to_folder(dict_of_tocs, contract_map):
+def extract_labels_to_folder(dict_of_tocs):
     """
     Outputs both a folder of json outputs for each contract along with a single json containing
     all outputs in a dictionary format.
-
     Parameters
     ----------
     dict of tocs: dict of str:list
       The toc which has been processed to extract each line of the toc.
       This list contains the actual extracted dict as well as the contract title.
-
     output_dir: str
       Directory where the new json files will be pushed to.
       If the directory does not exist it will be created.
     """
     agg_label_dict = {}
-    id_map = {v: k for k, v in contract_map.items()}
-
+   
     for item in dict_of_tocs.items():
-        print(item)
+
         if item[0] in agg_label_dict.keys():
             continue
         if "Monsanto Company" in item[0]:
             continue
         out = extract_label_to_json(item)
-        id = id_map[out[0][:-5]]
-        print(id)
-        agg_label_dict[id] = out[1]
+
+        agg_label_dict[out[0][:-5]] = out[1]
     return agg_label_dict
