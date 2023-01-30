@@ -1,12 +1,97 @@
 # For a single toc extraction, output a file in a specified output folder
-import re
-from pprint import pprint
 import roman
-import json
-import os
+import re, statistics
 
 
-def extract_label_to_json(toc_extracted):
+def extract_td(cell):
+    """Extracts the data tag
+
+    Args:
+        cell: b24 cell. has the cell information within the TD
+
+    Returns:
+        text: str. the cleaned text within the cell
+    """
+    text = ""
+    if cell.p:
+        text = cell.p.text
+    if cell.text:
+        text = cell.text
+    text = re.sub(r"[^\x00-\x7f]", r"", text)
+    text = text.replace("\n", " ")
+    return text.strip()
+
+
+def clean(table_list):
+    """Cleans the results of table parsing
+
+    Args:
+        table_list: list. list containing the results of parsing the TOC
+
+    Returns:
+        table_list: list. list containing the rows with enough columns
+    """
+    try:
+        num_cols = statistics.mode([len(x) for x in table_list])
+    except statistics.StatisticsError as e:
+        print("Multi mode, skipping")
+        return table_list
+    table_list = [x for x in table_list if len(x) == num_cols]
+    return table_list
+
+
+def parse_html(soup):
+    """Parses the html
+
+    Args:
+        soup: bs4 object. the bs4 representation of the html file
+
+    Returns:
+        table_holder: list. contains the values from the table
+    """
+    table_holder = []
+    for table in soup.find_all("table"):
+        for row in table.tbody.find_all("tr"):
+            row_holder = []
+            for cell in row.find_all("td"):
+                text = extract_td(cell)
+                if text:
+                    row_holder.append(text)
+            if row_holder:
+                table_holder.append(row_holder)
+    if table_holder:
+        table_holder = clean(table_holder)
+    return table_holder
+
+
+def filter_contents(s):
+    """Prepares the data by finding the start of the table
+
+    Args:
+        master_df: str. the string representation of the html file
+
+    Returns:
+        remaining: str. the string from when the first table tag begins
+    """
+    multi_page_join_distance = 5000
+    cont = re.split("table of contents", s, flags=re.IGNORECASE)
+    if len(cont) == 1:
+        cont = re.split("contents", s, flags=re.IGNORECASE)
+    remaining = "".join(cont[1:])
+    ind_start = remaining.find("<table")
+    remaining = remaining[ind_start:]
+
+    indices = [
+        m.start() for m in re.finditer("</table>", remaining, flags=re.IGNORECASE)
+    ]
+    valid_index = [x for x in indices if x < multi_page_join_distance]
+    if valid_index:
+        print("Combining table on next page")
+        return remaining[: valid_index[-1] + 10]
+    return remaining[:multi_page_join_distance]
+
+
+def refine_table(toc):
     """
     Parameters
     ----------
@@ -14,9 +99,6 @@ def extract_label_to_json(toc_extracted):
       The toc which has been processed to extract each line of the toc.
       This list contains the actual extracted dict as well as the contract title.
     """
-
-    contract_title = toc_extracted[0]
-    toc = toc_extracted[1]
 
     label_dict = {}
     n_section = 1
@@ -83,7 +165,7 @@ def extract_label_to_json(toc_extracted):
                 try:
                     label_dict[n_section - 1]
                 except:
-                    label_dict[n_section - 1] = ('Miscellanous Subsections', {})
+                    label_dict[n_section - 1] = ("Miscellanous Subsections", {})
 
                 label_dict[n_section - 1][1][n_subsection] = (
                     f"{is_subsection.group()} {concat_items}",
@@ -92,31 +174,4 @@ def extract_label_to_json(toc_extracted):
 
             n_subsection += 1
 
-    return contract_title, label_dict
-
-
-def extract_labels_to_folder(dict_of_tocs):
-    """
-    Outputs both a folder of json outputs for each contract along with a single json containing
-    all outputs in a dictionary format.
-    Parameters
-    ----------
-    dict of tocs: dict of str:list
-      The toc which has been processed to extract each line of the toc.
-      This list contains the actual extracted dict as well as the contract title.
-    output_dir: str
-      Directory where the new json files will be pushed to.
-      If the directory does not exist it will be created.
-    """
-    agg_label_dict = {}
-   
-    for item in dict_of_tocs.items():
-
-        if item[0] in agg_label_dict.keys():
-            continue
-        if "Monsanto Company" in item[0]:
-            continue
-        out = extract_label_to_json(item)
-
-        agg_label_dict[out[0][:-5]] = out[1]
-    return agg_label_dict
+    return label_dict
