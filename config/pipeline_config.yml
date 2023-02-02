@@ -3,6 +3,17 @@
 cuad_master_csv_mapping_path: ./config/cuad_master_csv_mapping.csv
 cuad_data_base_dir: "../" # path to CUAD_v1 dir
 
+# ocr pipeline
+ocr_pipeline:
+  # dir basename where the ocr results will be saved
+  ocr_output_dir: contract_ocr_results/
+
+  # text detection model to use for OCR
+  text_detr_model: db_resnet50
+
+  # text recognition model to use for OCR
+  text_recog_model: crnn_vgg16_bn
+
 # toc_matching params
 toc_matching:
   # min IoU overlap required to merge OCR output
