@@ -1,7 +1,4 @@
-#!/usr/bin/env python3
-
 import os
-import sys
 import json
 
 import yaml
@@ -9,10 +6,10 @@ import argparse
 import pandas as pd
 from tqdm import tqdm
 
-sys.path.append("../doctr/")
-
 from doctr.io import DocumentFile
 from doctr.models import ocr_predictor
+
+#TODO: RUN OCR only for contracts that have a TOC
 
 """
     Must be executed from ./contract_labeling_with_TOC dir
@@ -30,6 +27,9 @@ def get_prediction(pipeline_config, pdf_path, contract_uid=None):
 
     if not os.path.exists(ocr_results_dir):
         os.makedirs(ocr_results_dir)
+
+    pdf_path = os.path.join(cuad_base_dir, pdf_path)
+    print(f"ocr_result_savepath={pdf_path}")
 
     # fetch the contract_uid from the pdf path
     # the cotract must have the basename of the form ct_xx.pdf
@@ -55,6 +55,7 @@ def get_prediction(pipeline_config, pdf_path, contract_uid=None):
     # define the outpath for this pdf file
     ocr_result_savepath = os.path.join(ocr_results_dir,
                                        f"{contract_uid}_ocr_results.json")
+    print(f"ocr_result_savepath={ocr_result_savepath}")
 
     with open(ocr_result_savepath, 'w', encoding='utf-8') as json_fh:
         json.dump(json_output, json_fh, ensure_ascii=False, indent=2)
@@ -72,10 +73,12 @@ def main(input_df, pipeline_config):
         input_df.loc[row_idx, 'ocr_results_path'] = ocr_result_path
 
         # save the results intermittently
-        if idx % 50 == 0:
-            input_df.to_csv(pipeline_config['cuad_master_csv_mapping_path'])
+        # if idx % 50 == 0:
+        input_df.to_csv(pipeline_config['cuad_master_csv_mapping_path'],
+                        index=False)
 
-    input_df.to_csv(pipeline_config['cuad_master_csv_mapping_path'])
+    input_df.to_csv(pipeline_config['cuad_master_csv_mapping_path'],
+                    index=False)
 
     return
 
@@ -96,4 +99,3 @@ if __name__ == "__main__":
 
     # call main function
     main(input_df, pipeline_config)
-

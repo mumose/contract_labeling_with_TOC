@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 
 def get_word_level_ocr_output(raw_ocr_output):
     '''Parses OCR output into dict to better represent the data
@@ -158,12 +157,11 @@ def merge_lines(lines_to_merge_indices):
     return lines, follows
 
 
-def get_linewise_ocr_output(word_level_ocr_output, threshold):
+def get_linewise_ocr_output(raw_ocr_output, threshold):
     '''Merges word-level segments from OCR into line-level segments
 
     Args:
-        word_level_ocr_output: dict. OCR results parsed into word level
-            representations
+        raw_ocr_output: dict. Raw JSON results obtained from OCR pipeline
         threshold: float. The minimum IOU overlap required to merge two
             segments
 
@@ -171,6 +169,8 @@ def get_linewise_ocr_output(word_level_ocr_output, threshold):
         linewise_ocr_output: dict. OCR results obtained after merging
             overlapping word-level segments into contiguous segments
     '''
+    # get the word level ocr output from the raw ocr results
+    word_level_ocr_output = get_word_level_ocr_output(raw_ocr_output)
 
     # define the line-level ocr output dict
     linewise_ocr_output = {
