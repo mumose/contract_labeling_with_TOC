@@ -1,7 +1,7 @@
-#!/usr/bin/env python3
-
 import re
 from thefuzz import fuzz
+
+# TODO: Figure out logic to help out in debugging errors in matching
 
 
 def get_toc_page_id(linewise_ocr_output):
@@ -399,28 +399,3 @@ def find_all_match_ids(toc_match_config,
                   "Moving onto next TOC section")
 
     return all_match_info
-
-
-def flatten_processed_html(nested_dict):
-    '''Flattens the toc section label info, parsed from HTML
-
-    Args:
-        nested_dict: dict. Contains the section labels for a single
-            contract in nested form
-
-    Returns:
-        toc_label_dict_flattened: dict. Flattend toc section labels for
-            a single contract
-    '''
-    i = 1
-    toc_label_dict_flattened = {}
-
-    for item in nested_dict.items():
-        toc_label_dict_flattened[i] = (item[1][0], {})
-        i += 1
-
-        for sub_item in item[1][1].items():
-            toc_label_dict_flattened[i] = (sub_item[1][0], {})
-            i += 1
-
-    return toc_label_dict_flattened

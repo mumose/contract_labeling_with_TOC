@@ -1,9 +1,5 @@
-#!/usr/bin/env python3
-
 from thefuzz import fuzz
 from thefuzz import process
-
-# TODO: change col name: Line via OCR to Line1 via OCR in main pipeline process
 
 
 def merge_bboxes(line1_words,
