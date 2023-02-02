@@ -1,69 +1,135 @@
-#!/usr/bin/env python3
-
-import sys
 import os
-import cv2
 import shutil
-import PIL
 import math
-from pdf2image import convert_from_path, convert_from_bytes
+
+import cv2
+from pdf2image import convert_from_path
+
+'''
+CHANGES
+- changed image dimensions to H x W from W x H
+- changed path_to_image_with_bounding_box to path_to_annotated_image
+- changed images with bbox to annotated_image_dir
+- changed corr to coords
+
+'''
 
 
-def convert_pdf2image(config, contract_uid, results_df):
-    '''Converts the PDF version of the contract to individual images
+def prepare_results_dir(pipeline_config,
+                        match_metadata_df,
+                        contract_uid):
+    '''Creates the necessary dir structure for saving the pipeline outputs
 
     Args:
-        config: dict
-        contract_uid: str
-        results_df: pd.DataFrame
+        pipeline_config: dict. Config containing user-defined params
+        match_metadata_df: pd.DataFrame. The results dataframe obtained after running
+        contract_uid: str. The unique identifier for the contract
+            the matching pipeline
 
     Returns:
-        full_contract_image_dir: str
-        contract_tracker: dict
+        pdf_path: str. Path to the input pdf
+        html_path: str. Path to the input raw html
+        full_contract_image_dir: str. Dir where the images obtained
+            after pdf2image conversion will be saved
+        annotated_image_dir: str. Dir where the images annotated with the
+            pipeline outputs will be saved
+        input_pdf_dst_path: str. Path in the results dir
+            where the input pdf is saved
+        input_html_dst_path: str. Path in the results dir
+            where the input html is saved
 
     '''
+    results_viz_config = pipeline_config['visualize_results_pipeline']
 
-    # refactor this code block with new master csv mapping logic
-    '''
-    pdf_name = pdf_path.split("/")[-1][:-4]
+    cuad_base_dir = pipeline_config['cuad_data_base_dir']
 
-    contract_name = contract_name_mapper_reverse[pdf_name]
-    full_output_folder = parent_path + contract_name + "/raw_images"
+    pipeline_results_dir = pipeline_config["pipeline_results_dir"]
+    pipeline_results_dir = os.path.join(cuad_base_dir, pipeline_results_dir)
 
-    pdf_save_dir = os.path.join(parent_path, contract_name, "contract_pdf")
-    html_save_dir = os.path.join(parent_path, contract_name, "contract_html")
-    '''
-    cuad_data_base_dir = config["cuad_data_base_dir"]
-    results_viz_config = config["results_viz_config"]
+    if not os.path.exists(pipeline_results_dir):
+        os.makedirs(pipeline_results_dir)
 
-    pdf_path = results_df.loc[contract_uid, 'pdf_path']
-    pdf_path = os.path.join(cuad_data_base_dir, pdf_path)
+    # create dir to store the output for this specific contract
+    # the output will consist of two subdirs. One for the converted images
+    # and the other for the annotated images
+    contract_results_dir = os.path.join(pipeline_results_dir, contract_uid)
+    if not os.path.exists(contract_results_dir):
+        os.makedirs(contract_results_dir)
 
-    # create a dir for each contract to store the converted images and
-    # annotated images
-    results_base_dir = results_viz_config['results_base_dir']
-    results_base_dir = os.path.join(results_base_dir, contract_uid)
-    if not os.path.exists(results_base_dir):
-        os.makedirs(results_base_dir)
+    # create the dir to store the converted images
+    full_contract_image_dir = \
+        os.path.join(contract_results_dir,
+                     results_viz_config['full_contract_image_dir'])
 
-    # pylint: disable=E501
-    full_contract_image_dir = os.path.join(results_base_dir,
-                                           results_viz_config['full_contract_image_dir'])
     if not os.path.exists(full_contract_image_dir):
         os.makedirs(full_contract_image_dir)
 
-        print("*" * 50)
-        print(f"Saving converted pdf2image results in {full_contract_image_dir}")
-        print("*" * 50)
+    # create the dir to store the annotated images
+    annotated_image_dir = \
+        os.path.join(contract_results_dir,
+                     results_viz_config['annotated_image_dir'])
 
-    annotated_image_dir = os.path.join(results_base_dir,
-                                       results_viz_config['annotated_image_dir'])
     if not os.path.exists(annotated_image_dir):
         os.makedirs(annotated_image_dir)
 
-        print("*" * 50)
-        print(f"Saving annotated image results in {annotated_image_dir}")
-        print("*" * 50)
+    # copy the pdf and html to the results dir
+    # we do this so that the output is compatible with the demo website
+    # for displaying the results
+    input_pdf_save_dir = os.path.join(contract_results_dir,
+                                      results_viz_config['input_pdf_save_dir'])
+    if not os.path.exists(input_pdf_save_dir):
+        os.makedirs(input_pdf_save_dir)
+
+    # copy the input pdf over to the results dir
+    pdf_path = match_metadata_df.loc[contract_uid, 'pdf_path']
+    pdf_path = os.path.join(cuad_base_dir, pdf_path)
+
+    pdf_basename = os.path.basename(pdf_path)
+
+    input_pdf_dst_path = os.path.join(input_pdf_save_dir, pdf_basename)
+    shutil.copy(pdf_path, input_pdf_dst_path)
+
+    # create the dir for the input_html in the results dir
+    input_html_save_dir = \
+        os.path.join(contract_results_dir,
+                     results_viz_config['input_html_save_dir'])
+
+    if not os.path.exists(input_html_save_dir):
+        os.makedirs(input_html_save_dir)
+
+    # copy the input html over to the results dir
+    html_path = match_metadata_df.loc[contract_uid, 'raw_html_path']
+    html_path = os.path.join(cuad_base_dir, html_path)
+
+    html_basename = os.path.basename(html_path)
+
+    input_html_dst_path = os.path.join(input_html_save_dir, html_basename)
+    shutil.copy(html_path, input_html_dst_path)
+
+    return (pdf_path,
+            html_path,
+            full_contract_image_dir,
+            annotated_image_dir,
+            input_pdf_dst_path,
+            input_html_dst_path)
+
+
+def convert_pdf2image(pipeline_config,
+                      pdf_path,
+                      full_contract_image_dir):
+    '''Converts the PDF version of the contract to individual images
+
+    Args:
+        pipeline_config: dict. Config containing user-defined params
+        pdf_path: str. Path to the input pdf
+        full_contract_image_dir: str. Dir where the images obtained
+            after pdf2image conversion will be saved
+
+    Returns:
+        None
+    '''
+
+    results_viz_config = pipeline_config['visualize_results_pipeline']
 
     # convert the pdf to images
     convert_from_path(pdf_path=pdf_path,
@@ -73,8 +139,37 @@ def convert_pdf2image(config, contract_uid, results_df):
                       dpi=results_viz_config['image_dpi'],
                       hide_annotations=True)
 
-    img_files = os.listdir(full_contract_image_dir)
+    return
 
+
+def create_contract_tracker(full_contract_image_dir,
+                            annotated_image_dir,
+                            input_pdf_dst_path,
+                            input_html_dst_path,
+                            contract_uid):
+    '''Creates the basic JSON output data structure for saving the
+        pipeline outputs
+
+    Args:
+        full_contract_image_dir: str. Dir where the images obtained
+            after pdf2image conversion will be saved
+        annotated_image_dir: str. Dir where the images annotated with the
+            pipeline outputs will be saved
+        input_pdf_dst_path: str. Path in the results dir
+            where the input pdf is saved
+        input_html_dst_path: str. Path in the results dir
+            where the input html is saved
+        contract_uid: str. The unique identifier for the contract
+
+    Returns:
+        contract_tracker: dict. The output structured in the manner
+            required by the demo website
+    '''
+
+    # search over image dir obtained after pdf2image conversion
+    converted_img_files = os.listdir(full_contract_image_dir)
+
+    # create the page level info data structure required in the demo website
     page_tracking = {
                         'dimensions': None,
                         'bbox': None,
@@ -83,51 +178,86 @@ def convert_pdf2image(config, contract_uid, results_df):
                      }
 
     pages_list = []
-    for img_name in img_files:
+    for img_name in converted_img_files:
         pages_list.append(page_tracking.copy())
 
         raw_image_path = os.path.join(full_contract_image_dir, img_name)
         pages_list[-1]['path_to_raw_image'] = raw_image_path
 
-        # TODO: replace this line with cv2 ops
-        pages_list[-1]['dimensions'] = PIL.Image.open(raw_image_path).size
+        img_size = cv2.imread(raw_image_path).size
+        img_dimensions = img_size[:2]  # dimensions are H x W
+        pages_list[-1]['dimensions'] = img_dimensions
 
-    contract_tracker = {contract_uid: {'pages': pages_list}}
+    # create the contract tracker obj to save the JSON results of the
+    # pipeline
+    contract_tracker = {contract_uid:
+                        {
+                            'pages': pages_list,
+                            'raw_pdf_dir': input_pdf_dst_path,
+                            'raw_html_dir': input_html_dst_path,
+                            'full_contract_image_dir': full_contract_image_dir,
+                            'annotated_image_dir': annotated_image_dir
+                        }
+                        }
 
-    return full_contract_image_dir, contract_tracker
+    return contract_tracker
 
 
-def write_bbox_images(pdf_parsed_df,
-                      full_output_folder,
-                      contract_tracker,
-                      contract_uid):
-    '''
-    Returns json outpath file with info
+def annotate_images(match_metadata_df,
+                    full_contract_image_dir,
+                    annotated_image_dir,
+                    contract_tracker,
+                    contract_uid):
+    '''Annotates the contract images and exports the pipeline results as JSON
+
+    Args:
+        match_metadata_df: pd.DataFrame. Obtained after running the matching
+            pipeline
+        full_contract_image_dir: str. The dir containing the images
+            obtained after pdf2image conversion
+        annotated_image_dir: str. Dir where the images annotated with the
+            pipeline outputs will be saved
+        contract_tracker: dict. The output structured in the manner
+            required by the demo website
+        contract_uid: str. The unique identifier for the contract
+
+    Returns:
+        contract_tracker: dict. The output structured in the manner
+            required by the demo website
     '''
     num_pages = len(contract_tracker[contract_uid]['pages'])
+
     for page_id in range(num_pages):
-        if page_id not in pdf_parsed_df['page_id'].to_list():
+        # if the page doesn't have any bboxes to annoated the images with
+        if page_id not in match_metadata_df['page_id'].to_list():
             continue
-        sub_df = df[df['page_id'] == page_id].reset_index(drop=True).copy()
+
+        page_id_cond = match_metadata_df['page_id'] == page_id
+        subset_df = match_metadata_df[page_id_cond].reset_index(drop=True).copy()
 
         img_page_id = f"{page_id + 1}.jpg"
-        img_name = list(filter(lambda x: True if img_page_id in x else False, os.listdir(full_output_folder)))[0]
-        img_read_path = full_output_folder + "/" + img_name
-        bbox_output_folder = full_output_folder[:-11]
-        img_write_parent_path = f"{bbox_output_folder}/annotated_images/"
+        img_name = list(filter(lambda x: True if img_page_id in x
+                        else False, os.listdir(full_contract_image_dir)))[0]
 
-        if not os.path.exists(img_write_parent_path):
-            os.mkdir(img_write_parent_path)
+        img_in_path = os.path.join(full_contract_image_dir, img_name)
+        img_out_path = os.path.join(annotated_image_dir, img_name)
 
-        img_write_full_path = img_write_parent_path + img_name
-        img = cv2.imread(img_read_path)
-        width, height = PIL.Image.open(img_read_path).size
+        img = cv2.imread(img_in_path)
+        height, width = img.size[:2]  # dimensions are H x W
 
-        bbox_attributes = {'corr':None, 'text_via_ocr':None, 'text_from_html':None}
-        contract_tracker[contract_uid]['pages'][page_id]['bbox'] = [bbox_attributes.copy() for _ in range(len(sub_df))]
-        contract_tracker[contract_uid]['pages'][page_id]['path_to_image_with_bounding_box'] = img_write_full_path
+        bbox_attributes = {
+                                'coords': None,
+                                'text_via_ocr': None,
+                                'text_from_html': None
+                            }
 
-        for idx, row in sub_df.iterrows():
+        contract_tracker[contract_uid]['pages'][page_id]['bbox'] = \
+            [bbox_attributes.copy() for _ in range(len(subset_df))]
+
+        contract_tracker[contract_uid]['pages'][page_id]['path_to_annotated_image'] = \
+            img_out_path
+
+        for idx, row in subset_df.iterrows():
             (x1, y1), (x2, y2) = row['exact_match_bbox']
 
             x1 = math.floor(width * x1)
@@ -135,14 +265,65 @@ def write_bbox_images(pdf_parsed_df,
             y1 = math.floor(height * y1)
             y2 = math.ceil(height * y2)
 
-            img = cv2.rectangle(img, (x1, y1), (x2, y2), (255,0,0), 2)
-            print(f"Drew bounding boxes for {img_name} page ")
+            img = cv2.rectangle(img, (x1, y1), (x2, y2), (255, 0, 0), 2)
 
-            contract_tracker[contract_uid]['pages'][page_id]['bbox'][idx]['corr'] = ((x1, y1), (x2, y2))
-            contract_tracker[contract_uid]['pages'][page_id]['bbox'][idx]['text_via_ocr'] = row['exact_match_text']
-            contract_tracker[contract_uid]['pages'][page_id]['bbox'][idx]['text_from_html'] = row['Section Title via HTML']
+            contract_tracker[contract_uid]['pages'][page_id]['bbox'][idx]['coords'] = \
+                ((x1, y1), (x2, y2))
 
-        cv2.imwrite(img_write_full_path, img)
-        print(f"Wrote image with bboxes @ {img_write_full_path}")
+            contract_tracker[contract_uid]['pages'][page_id]['bbox'][idx]['text_via_ocr'] = \
+                row['exact_match_text']
+
+            contract_tracker[contract_uid]['pages'][page_id]['bbox'][idx]['text_from_html'] = \
+                row['Section Title via HTML']
+
+        cv2.imwrite(img_out_path, img)
+
+    return contract_tracker
+
+
+def viz_results_single_contract(pipeline_config,
+                                match_metadata_df,
+                                contract_uid):
+    '''Main Execution
+
+    Args:
+        pipeline_config: dict. Config containing user-defined params
+        match_metadata_df: pd.DataFrame. The results dataframe obtained after running
+        contract_uid: str. The unique identifier for the contract
+            the matching pipeline
+
+    Returns:
+        contract_tracker: dict. The output structured in the manner
+            required by the demo website
+    '''
+    # create the required dir structure in the results folder
+    # copy the input pdf and html over
+    (pdf_path,
+     html_path,
+     full_contract_image_dir,
+     annotated_image_dir,
+     input_pdf_dst_path,
+     input_html_dst_path) = prepare_results_dir(pipeline_config,
+                                                match_metadata_df,
+                                                contract_uid)
+
+    # convert the input pdf to images
+    convert_pdf2image(pipeline_config,
+                      pdf_path,
+                      full_contract_image_dir)
+
+    # create the contract tracker for exporting results as JSON
+    contract_tracker = create_contract_tracker(full_contract_image_dir,
+                                               annotated_image_dir,
+                                               input_pdf_dst_path,
+                                               input_html_dst_path,
+                                               contract_uid)
+
+    # annotate the images with the pipeline output
+    contract_tracker = annotate_images(match_metadata_df,
+                                       full_contract_image_dir,
+                                       annotated_image_dir,
+                                       contract_tracker,
+                                       contract_uid)
 
     return contract_tracker
