@@ -254,7 +254,8 @@ def create_cuad_master_csv(pdf_paths, txt_paths, raw_html_paths, is_exists, mast
         is_raw_html_renamed=False,
         processed_html_path=None,
         ocr_results_path=None,
-        pipeline_results_path=None,
+        pipeline_results_csv_path=None,
+        pipeline_results_json_path=None,
     )
     # sort the pdf paths in alphabetical order.
     # These are used to create contract_uids
