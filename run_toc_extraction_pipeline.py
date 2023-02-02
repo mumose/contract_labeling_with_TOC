@@ -111,9 +111,10 @@ def run_matching_single_contract(row, pipeline_config):
         raw_ocr_results = json.load(json_fh)
 
     # pass the ocr through postprocessing ops to get linewise OCR output
+    iou_threshold = ocr_config['ocr_line_merge_iou_threshold']
     linewise_ocr_output = \
         postprocess_ocr_output.get_linewise_ocr_output(raw_ocr_results,
-                                                       ocr_config['ocr_line_merge_iou_threshold'])
+                                                       iou_threshold)
 
     # convert to df and then sort by page id and y coord of the top left corner
     linewise_ocr_output_df = pd.DataFrame(linewise_ocr_output)
