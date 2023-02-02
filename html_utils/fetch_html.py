@@ -1,51 +1,51 @@
-import process_html
-from bs4 import BeautifulSoup
-import json
+#!/usr/bin/env python3
+
 import os
+import json
+from bs4 import BeautifulSoup
+
+import process_html
 
 
 def main(html_file_dir, contract_name_map_path):
     """Defines Main Execution"""
 
-    with open(
-        contract_name_map_path,
-        "r",
-    ) as data:
+    with open(contract_name_map_path, "r") as data:
         contract_map = json.load(data)
         contract_map = {v: k for k, v in contract_map.items()}
+
     print(contract_map)
 
-    html_files = [x for x in os.listdir(html_file_dir) if x.endswith(".html")]
+    html_files = [x for x in os.listdir(html_file_dir)
+                  if (x.endswith(".html") or x.endswith(".htm"))]
     data = {}
-    for file in html_files:
-        if "Monsanto Company" in file:
+    for fname in html_files:
+        if "Monsanto Company" in fname:
             continue
-        with open(os.path.join(html_file_dir, file), "r", encoding="latin1") as f:
+
+        html_input_path = os.path.join(html_file_dir, fname)
+        with open(html_input_path, "r", encoding="latin1") as f:
             contents = f.read()
 
         contents = process_html.filter_contents(contents)
         s = BeautifulSoup(contents, "lxml")
+
+        # process the html
         table = process_html.parse_html(s)
 
-        filename = file.split(".htm")[0]
-        if filename not in contract_map:
-            print(
-                "Filename",
-                filename,
-                "not found in contract map but HTML was parsed, skipping..",
-            )
+        basename = fname.split(".htm")[0]
+        if basename not in contract_map:
+            print(f"Filename: {basename}" +
+                  "not found in contract map but HTML was parsed, skipping...")
             continue
-        file_id = contract_map[filename]
+
+        contract_uid = contract_map[basename]
         if not table:
-            print(
-                "Filename",
-                filename,
-                "with file id",
-                file_id,
-                "was parsed but contained no data, skipping..",
-            )
+            print(f"Filename: {basename} with File ID: {contract_uid}" +
+                  "was parsed but contained no data, skipping..")
             continue
-        data[file_id] = process_html.refine_table(table)
+
+        data[contract_uid] = process_html.refine_table(table)
 
     return data
 
