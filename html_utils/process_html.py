@@ -58,7 +58,6 @@ def parse_html(soup):
     table_holder = []
     for table in soup.find_all("table"):
         for row in table.tbody.find_all("tr"):
-
             row_holder = []
             for cell in row.find_all("td"):
                 text = extract_td(cell)
@@ -201,3 +200,28 @@ def refine_table(toc):
             n_subsection += 1
 
     return label_dict
+
+
+def flatten_processed_html(nested_dict):
+    '''Flattens the toc section label info, parsed from HTML
+
+    Args:
+        nested_dict: dict. Contains the section labels for a single
+            contract in nested form
+
+    Returns:
+        toc_label_dict_flattened: dict. Flattend toc section labels for
+            a single contract
+    '''
+    i = 1
+    toc_label_dict_flattened = {}
+
+    for item in nested_dict.items():
+        toc_label_dict_flattened[i] = (item[1][0], {})
+        i += 1
+
+        for sub_item in item[1][1].items():
+            toc_label_dict_flattened[i] = (sub_item[1][0], {})
+            i += 1
+
+    return toc_label_dict_flattened
