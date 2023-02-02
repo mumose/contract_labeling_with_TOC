@@ -10,6 +10,7 @@ def get_toc_page_id(linewise_ocr_output):
     Args:
         linewise_ocr_output: dict. OCR results obtained after merging
             overlapping word-level segments into contiguous segments
+
     Returns:
         page_id: int. Page number of the table of contents page
     '''
@@ -51,8 +52,6 @@ def match_toc_label_with_ocr_seg(toc_label,
         first_line_match_threshold: float.
         toc_page_id: int. The page_id of the table of contents page
 
-    this function operates 1 line at a time or 2 lines at a time
-    if both idx are passed in. -- need to figure out how to incorporate proper bboxes logic though
     '''
     # TODO: in first commented block- why is the first cond here, we check for toc_page earlier
     # TODO: second check is redundant since we also check if idx1 == idx2. If
@@ -402,7 +401,7 @@ def find_all_match_ids(toc_match_config,
     return all_match_info
 
 
-def flatten_contract_dict(nested_dict):
+def flatten_processed_html(nested_dict):
     '''Flattens the toc section label info, parsed from HTML
 
     Args:
