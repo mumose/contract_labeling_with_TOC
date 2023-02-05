@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "contract-labeling-with-toc"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "contract_labeling_with_toc"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pyyaml = "^6.0"
+pandas = "^1.5.3"
+tqdm = "^4.64.1"
+beautifulsoup4 = "^4.11.2"
+roman = "^3.3"
+lxml = "^4.9.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

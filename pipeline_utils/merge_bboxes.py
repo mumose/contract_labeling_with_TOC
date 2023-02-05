@@ -2,13 +2,10 @@ from thefuzz import fuzz
 from thefuzz import process
 
 
-def merge_bboxes(line1_words,
-                 line2_words,
-                 toc_label,
-                 bboxes,
-                 num_words_toc_label,
-                 match_score_toc):
-    '''Extracts the bboxes of the subset of the matched text segment that
+def merge_bboxes(
+    line1_words, line2_words, toc_label, bboxes, num_words_toc_label, match_score_toc
+):
+    """Extracts the bboxes of the subset of the matched text segment that
     matches closest to the toc label.
 
     We iterate through windows of text in the matched text to try and determine
@@ -33,7 +30,7 @@ def merge_bboxes(line1_words,
 
     Returns:
 
-    '''
+    """
     # split the str into a list of words and then combine the words
     # for the two lines
     if isinstance(line1_words, str):
@@ -52,20 +49,15 @@ def merge_bboxes(line1_words,
 
     # we iterate over non-overlapping windows of the list of words in the
     # text segment
-    for _, start_idx in enumerate(range(0,
-                                        len(full_line_words),
-                                        num_words_toc_label)
-                                  ):
+    for _, start_idx in enumerate(range(0, len(full_line_words), num_words_toc_label)):
 
-        window_text = " ".join(full_line_words[start_idx:
-                                               (start_idx +
-                                                num_words_toc_label)
-                                               ]
-                               )
+        window_text = " ".join(
+            full_line_words[start_idx : (start_idx + num_words_toc_label)]
+        )
 
-        window_match_score = process.extractBests(window_text,
-                                                  [toc_label],
-                                                  scorer=fuzz.token_set_ratio)[0][-1]
+        window_match_score = process.extractBests(
+            window_text, [toc_label], scorer=fuzz.token_set_ratio
+        )[0][-1]
 
         # if a second line exists then we keep track of all the bboxes so we
         # can that the final bbox can be obtained by merging the
@@ -74,10 +66,7 @@ def merge_bboxes(line1_words,
         if line2_words:
             candidate_bboxes = bboxes[0] + bboxes[1]
         else:
-            candidate_bboxes = bboxes[start_idx:
-                                      (start_idx +
-                                       num_words_toc_label)
-                                      ]
+            candidate_bboxes = bboxes[start_idx : (start_idx + num_words_toc_label)]
 
         # if the fuzzy match score of the window is greater than the
         # match score of the full line with the toc then find the
@@ -93,10 +82,7 @@ def merge_bboxes(line1_words,
             x_max = max([x[1][0] for x in candidate_bboxes])
             y_max = max([y[1][-1] for y in candidate_bboxes])
 
-            merged_bbox = [
-                            [x_min, y_min],
-                            [x_max, y_max]
-                           ]
+            merged_bbox = [[x_min, y_min], [x_max, y_max]]
 
             return merged_bbox, window_text
 
@@ -121,16 +107,13 @@ def merge_bboxes(line1_words,
     x_max = max([x[1][0] for x in match_candidate_bboxes])
     y_max = max([y[1][-1] for y in match_candidate_bboxes])
 
-    merged_bbox = [
-                    [x_min, y_min],
-                    [x_max, y_max]
-                   ]
+    merged_bbox = [[x_min, y_min], [x_max, y_max]]
 
     return merged_bbox, match_text
 
 
 def extract_exact_match(row):
-    '''Extracts the bbox and text segment that matches exactly with
+    """Extracts the bbox and text segment that matches exactly with
        the toc label
 
     The matched line from OCR may contain superfluous text in cases where the
@@ -151,12 +134,12 @@ def extract_exact_match(row):
             text segment that matched most closely with the toc label
         exact_match_text: str. Text of the segment that matched
             most closely with the toc label
-    '''
-    toc_label = row['Section Title via HTML']
-    bboxes = row['bboxes']
+    """
+    toc_label = row["Section Title via HTML"]
+    bboxes = row["bboxes"]
     if toc_label is not None:
-        line1_text = row.loc['Line1 via OCR']
-        line2_text = row.loc['Line2 via OCR']
+        line1_text = row.loc["Line1 via OCR"]
+        line2_text = row.loc["Line2 via OCR"]
 
         if line2_text is not None:
             full_line_text = line1_text + line2_text
@@ -168,21 +151,23 @@ def extract_exact_match(row):
         # text in which case we will be able to find a window within the
         # full text that returns a higher fuzzy matche score with
         # the toc label
-        match_toc = process.extractBests(full_line_text,
-                                         [toc_label],
-                                         scorer=fuzz.token_set_ratio)
+        match_toc = process.extractBests(
+            full_line_text, [toc_label], scorer=fuzz.token_set_ratio
+        )
 
         # match_text_toc is the text in the best matching
         # toc label
         match_text_toc, match_score_toc = match_toc[0]
         num_words_toc_label = len(match_text_toc.split())
 
-        merged_bbox, exact_match_text = merge_bboxes(line1_text,
-                                                     line2_text,
-                                                     toc_label,
-                                                     bboxes,
-                                                     num_words_toc_label,
-                                                     match_score_toc)
+        merged_bbox, exact_match_text = merge_bboxes(
+            line1_text,
+            line2_text,
+            toc_label,
+            bboxes,
+            num_words_toc_label,
+            match_score_toc,
+        )
 
         return merged_bbox, exact_match_text
 
