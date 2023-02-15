@@ -14,16 +14,17 @@ from pipeline_utils import visualize_results
 
 # TODO: replace pipeline_results_path to pipeline_results_csv_path and
 # pipeline_results_json_path
+# TODO: run pipeline on sample contracts
 
 
-def save_pipeline_outputs(match_metadata_df,
+def save_pipeline_outputs(match_results_df,
                           pipeline_output_json,
                           pipeline_results_dir,
                           contract_uid):
     '''Saves the pipeline results to disk
 
     Args:
-        match_metadata_df: pd.DataFrame. The results df obtained after
+        match_results_df: pd.DataFrame. The results df obtained after
             running the matching pipeline
         pipeline_output_json: dict. The output structured in the manner
             required by the demo website
@@ -33,7 +34,7 @@ def save_pipeline_outputs(match_metadata_df,
             the matching pipeline
 
     Returns:
-        match_metadata_savepath: str. The path where the results df from the
+        match_results_savepath: str. The path where the results df from the
             matching pipeline will be saved
         json_savepath: str. The path where the output structured in the manner
             required by the demo website will be saved
@@ -44,19 +45,19 @@ def save_pipeline_outputs(match_metadata_df,
         os.makedirs(contract_results_dir)
 
     # save the match metadata
-    match_metadata_savepath = os.path.join(contract_results_dir,
-                                           f"{contract_uid}_match_metadata.csv")
+    match_results_savepath = os.path.join(contract_results_dir,
+                                          f"{contract_uid}_match_metadata.csv")
 
-    match_metadata_df.to_csv(match_metadata_savepath, index=False)
+    match_results_df.to_csv(match_results_savepath, index=False)
 
     # save the json format of the pipeline results
     json_savepath = os.path.join(contract_results_dir,
                                  f"{contract_uid}.json")
 
-    with open(json_savepath, 'r') as json_fh:
+    with open(json_savepath, 'w+') as json_fh:
         json.dump(pipeline_output_json, json_fh)
 
-    return match_metadata_savepath, json_savepath
+    return match_results_savepath, json_savepath
 
 
 def run_matching_single_contract(row, pipeline_config):
@@ -67,7 +68,7 @@ def run_matching_single_contract(row, pipeline_config):
         pipeline_config: dict. Config containing user-defined params
 
     Returns:
-        match_metadata_savepath: str. The path where the results df from the
+        match_results_savepath: str. The path where the results df from the
             matching pipeline will be saved
         json_savepath: str. The path where the output structured in the manner
             required by the demo website will be saved
@@ -130,12 +131,12 @@ def run_matching_single_contract(row, pipeline_config):
     ***************************************************************************
     '''
     # now perform the fuzzy match between the TOC labels and the ocr output
-    match_metadata = match_toc_labels.find_all_match_ids(toc_match_config,
-                                                         toc_label_dict,
-                                                         linewise_ocr_output)
+    match_results = match_toc_labels.find_all_match_ids(toc_match_config,
+                                                        toc_label_dict,
+                                                        linewise_ocr_output)
 
     # conver to df and rename the cols
-    match_metadata_df = pd.DataFrame(match_metadata)
+    match_results_df = pd.DataFrame(match_results)
 
     columns = {
                     0: 'Line1 via OCR',
@@ -146,13 +147,13 @@ def run_matching_single_contract(row, pipeline_config):
                     5: 'page_id',
                     6: 'bboxes',
               }
-    match_metadata_df = match_metadata_df.rename(columns=columns)
+    match_results_df = match_results_df.rename(columns=columns)
 
     # extract the exact text matches of the ocr text segments and the toc
     # labels
-    (match_metadata_df['exact_match_bbox'],
-     match_metadata_df['exact_match_text']) = zip(
-            *match_metadata_df.apply(
+    (match_results_df['exact_match_bbox'],
+     match_results_df['exact_match_text']) = zip(
+            *match_results_df.apply(
                  lambda row: merge_bboxes.extract_exact_match(row),
                  axis=1
              )
@@ -165,7 +166,8 @@ def run_matching_single_contract(row, pipeline_config):
     '''
     pipeline_output_json = \
         visualize_results.viz_results_single_contract(pipeline_config,
-                                                      match_metadata_df,
+                                                      row,
+                                                      match_results_df,
                                                       contract_uid)
 
     '''
@@ -173,31 +175,30 @@ def run_matching_single_contract(row, pipeline_config):
                             SAVE PIPELINE OUTPUTS
     ***************************************************************************
     '''
-    match_metadata_savepath, json_savepath = \
-        save_pipeline_outputs(match_metadata_df,
+    match_results_savepath, json_savepath = \
+        save_pipeline_outputs(match_results_df,
                               pipeline_output_json,
                               pipeline_results_dir,
                               contract_uid)
 
-    return match_metadata_savepath, json_savepath
+    return match_results_savepath, json_savepath
 
 
 def main(input_df, pipeline_config):
     """Main execution of the end-to-end pipeline"""
-    # filter out contracts that don't have ocr results or that don't have
-    # raw htmls
+    # filter out contracts that don't have ocr results and raw htmls
     ocr_results_cond = input_df['ocr_results_path'].notnull()
     raw_html_cond = input_df['raw_html_path'].notnull()
 
-    filter_df = input_df.loc[(ocr_results_cond) | (raw_html_cond)]
+    filter_df = input_df.loc[(ocr_results_cond) & (raw_html_cond)]
 
     for idx, (row_idx, row) in tqdm(enumerate(filter_df.iterrows())):
-        match_metadata_savepath, json_savepath = \
+        match_results_savepath, json_savepath = \
             run_matching_single_contract(row, pipeline_config)
 
         # update the input df
         input_df.loc[row_idx, 'pipeline_results_csv_path'] = \
-            match_metadata_savepath
+            match_results_savepath
 
         input_df.loc[row_idx, 'pipeline_results_json_path'] = json_savepath
 

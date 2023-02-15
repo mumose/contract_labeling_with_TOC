@@ -1,4 +1,5 @@
 import os
+
 import json
 import yaml
 import argparse
@@ -6,8 +7,15 @@ import pandas as pd
 from tqdm import tqdm
 
 from bs4 import BeautifulSoup
+import sys
+
+sys.path.append(os.path.abspath('./html_utils/'))
 
 import process_html
+
+
+# TODO: refactor so that this import is required. Each script should have
+# standalone functionality that the main pipeline script uses when importing
 
 
 def process_single_html(html_path, pipeline_config):

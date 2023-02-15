@@ -16,13 +16,14 @@ CHANGES
 
 
 def prepare_results_dir(pipeline_config,
-                        match_metadata_df,
+                        row,
                         contract_uid):
     '''Creates the necessary dir structure for saving the pipeline outputs
 
     Args:
         pipeline_config: dict. Config containing user-defined params
-        match_metadata_df: pd.DataFrame. The results dataframe obtained after running
+        row: pd.DataFrame. Row from the cuad master csv mapping df that
+            corresponds to the given contract
         contract_uid: str. The unique identifier for the contract
             the matching pipeline
 
@@ -81,7 +82,7 @@ def prepare_results_dir(pipeline_config,
         os.makedirs(input_pdf_save_dir)
 
     # copy the input pdf over to the results dir
-    pdf_path = match_metadata_df.loc[contract_uid, 'pdf_path']
+    pdf_path = row['pdf_path']
     pdf_path = os.path.join(cuad_base_dir, pdf_path)
 
     pdf_basename = os.path.basename(pdf_path)
@@ -98,7 +99,7 @@ def prepare_results_dir(pipeline_config,
         os.makedirs(input_html_save_dir)
 
     # copy the input html over to the results dir
-    html_path = match_metadata_df.loc[contract_uid, 'raw_html_path']
+    html_path = row['raw_html_path']
     html_path = os.path.join(cuad_base_dir, html_path)
 
     html_basename = os.path.basename(html_path)
@@ -184,7 +185,7 @@ def create_contract_tracker(full_contract_image_dir,
         raw_image_path = os.path.join(full_contract_image_dir, img_name)
         pages_list[-1]['path_to_raw_image'] = raw_image_path
 
-        img_size = cv2.imread(raw_image_path).size
+        img_size = cv2.imread(raw_image_path).shape
         img_dimensions = img_size[:2]  # dimensions are H x W
         pages_list[-1]['dimensions'] = img_dimensions
 
@@ -203,7 +204,7 @@ def create_contract_tracker(full_contract_image_dir,
     return contract_tracker
 
 
-def annotate_images(match_metadata_df,
+def annotate_images(match_results_df,
                     full_contract_image_dir,
                     annotated_image_dir,
                     contract_tracker,
@@ -211,7 +212,7 @@ def annotate_images(match_metadata_df,
     '''Annotates the contract images and exports the pipeline results as JSON
 
     Args:
-        match_metadata_df: pd.DataFrame. Obtained after running the matching
+        match_results_df: pd.DataFrame. Obtained after running the matching
             pipeline
         full_contract_image_dir: str. The dir containing the images
             obtained after pdf2image conversion
@@ -229,11 +230,11 @@ def annotate_images(match_metadata_df,
 
     for page_id in range(num_pages):
         # if the page doesn't have any bboxes to annoated the images with
-        if page_id not in match_metadata_df['page_id'].to_list():
+        if page_id not in match_results_df['page_id'].to_list():
             continue
 
-        page_id_cond = match_metadata_df['page_id'] == page_id
-        subset_df = match_metadata_df[page_id_cond].reset_index(drop=True).copy()
+        page_id_cond = match_results_df['page_id'] == page_id
+        subset_df = match_results_df[page_id_cond].reset_index(drop=True).copy()
 
         img_page_id = f"{page_id + 1}.jpg"
         img_name = list(filter(lambda x: True if img_page_id in x
@@ -243,7 +244,7 @@ def annotate_images(match_metadata_df,
         img_out_path = os.path.join(annotated_image_dir, img_name)
 
         img = cv2.imread(img_in_path)
-        height, width = img.size[:2]  # dimensions are H x W
+        height, width = img.shape[:2]  # dimensions are H x W
 
         bbox_attributes = {
                                 'coords': None,
@@ -282,13 +283,16 @@ def annotate_images(match_metadata_df,
 
 
 def viz_results_single_contract(pipeline_config,
-                                match_metadata_df,
+                                cuad_master_csv_row,
+                                match_results_df,
                                 contract_uid):
     '''Main Execution
 
     Args:
         pipeline_config: dict. Config containing user-defined params
-        match_metadata_df: pd.DataFrame. The results dataframe obtained after running
+        cuad_master_csv_row: pd.Series. Row from the cuad master csv
+            corresponding to the given contract
+        match_results_df: pd.DataFrame. The results dataframe obtained after running
         contract_uid: str. The unique identifier for the contract
             the matching pipeline
 
@@ -304,7 +308,7 @@ def viz_results_single_contract(pipeline_config,
      annotated_image_dir,
      input_pdf_dst_path,
      input_html_dst_path) = prepare_results_dir(pipeline_config,
-                                                match_metadata_df,
+                                                cuad_master_csv_row,
                                                 contract_uid)
 
     # convert the input pdf to images
@@ -320,7 +324,7 @@ def viz_results_single_contract(pipeline_config,
                                                contract_uid)
 
     # annotate the images with the pipeline output
-    contract_tracker = annotate_images(match_metadata_df,
+    contract_tracker = annotate_images(match_results_df,
                                        full_contract_image_dir,
                                        annotated_image_dir,
                                        contract_tracker,

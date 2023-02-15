@@ -65,8 +65,15 @@ def get_prediction(pipeline_config, pdf_path, contract_uid=None):
 
 def main(input_df, pipeline_config):
     '''Executes ocr 'pipeline for all contracts in master csv mapping'''
+    # TODO: remove later if necessary
+    # the html must be present
+    raw_html_cond = input_df['raw_html_path'].notnull()
 
-    for idx, (row_idx, row) in tqdm(enumerate(input_df.iterrows())):
+    # the OCR results must not be present
+    ocr_results_cond = input_df['ocr_results_path'].isnull()
+
+    filter_df = input_df.loc[(raw_html_cond) & (ocr_results_cond)]
+    for idx, (row_idx, row) in tqdm(enumerate(filter_df.iterrows())):
         ocr_result_path = get_prediction(pipeline_config,
                                          row['pdf_path'])
 

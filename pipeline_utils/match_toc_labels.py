@@ -52,6 +52,9 @@ def match_toc_label_with_ocr_seg(toc_label,
         first_line_match_threshold: float.
         toc_page_id: int. The page_id of the table of contents page
 
+    Returns:
+
+
     '''
     # TODO: in first commented block- why is the first cond here, we check for toc_page earlier
     # TODO: second check is redundant since we also check if idx1 == idx2. If
@@ -214,7 +217,7 @@ def match_toc_label_with_ocr_seg(toc_label,
         toc_label_beg = toc_label[0].split()[:2]
         toc_label_beg = " ".join(toc_label_beg)
 
-        matched_line_beg = multi_line_text.split()[:2]
+        matched_line_beg = line_text.split()[:2]
         matched_line_beg = " ".join(matched_line_beg)
 
         first_2words_match_score = fuzz.partial_ratio(toc_label_beg.lower(),
@@ -298,7 +301,7 @@ def find_single_match_id(toc_label,
     for idx1, idx2 in itertuple:
 
         # first try matching with first line
-        match_info, prev_line_pointer = \
+        match_info, updated_prev_line_pointer = \
             match_toc_label_with_ocr_seg(toc_label,
                                          linewise_ocr_output,
                                          idx1,
@@ -309,10 +312,10 @@ def find_single_match_id(toc_label,
                                          first_line_match_threshold,
                                          toc_page_id)
         if match_info:
-            return match_info, prev_line_pointer
+            return match_info, updated_prev_line_pointer
 
         # let's try matching with second line only
-        match_info, prev_line_pointer = \
+        match_info, updated_prev_line_pointer = \
             match_toc_label_with_ocr_seg(toc_label,
                                          linewise_ocr_output,
                                          idx2,
@@ -323,10 +326,10 @@ def find_single_match_id(toc_label,
                                          first_line_match_threshold,
                                          toc_page_id)
         if match_info:
-            return match_info, prev_line_pointer
+            return match_info, updated_prev_line_pointer
 
         # now try matching with 2 lines
-        match_info, prev_line_pointer = \
+        match_info, updated_prev_line_pointer = \
             match_toc_label_with_ocr_seg(toc_label,
                                          linewise_ocr_output,
                                          idx1,
@@ -338,7 +341,7 @@ def find_single_match_id(toc_label,
                                          toc_page_id)
 
         if match_info:
-            return match_info, prev_line_pointer
+            return match_info, updated_prev_line_pointer
 
         # if no match, move onto the next pair of lines
         continue
@@ -381,7 +384,7 @@ def find_all_match_ids(toc_match_config,
     first_line_match_threshold = toc_match_config['first_line_match_threshold']
 
     all_match_info = []
-    prev_line_pointer = 0  # init the pointer to the prev line
+    prev_line_pointer = 0  # init the pointer to the first line
     for _, toc_label in toc_label_dict.items():
         match_info, prev_line_pointer = \
             find_single_match_id(toc_label,
