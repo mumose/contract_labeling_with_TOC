@@ -5,6 +5,7 @@ import argparse
 
 import pandas as pd
 from tqdm import tqdm
+from IPython.display import display
 
 from html_utils import fetch_html
 from model_utils import postprocess_ocr_output
@@ -98,6 +99,10 @@ def run_matching_single_contract(row, pipeline_config):
         html_path, pipeline_config
     )
 
+    # if the html couldn't be parsed then return NOne
+    if not toc_label_dict:
+        return None, None, "html"
+
     """
     ***************************************************************************
                             OCR PIPELINE
@@ -129,7 +134,8 @@ def run_matching_single_contract(row, pipeline_config):
     # now perform the fuzzy match between the TOC labels and the ocr output
     match_results = match_toc_labels.find_all_match_ids(toc_match_config,
                                                         toc_label_dict,
-                                                        linewise_ocr_output)
+                                                        linewise_ocr_output,
+                                                        contract_uid)
 
     # conver to df and rename the cols
     match_results_df = pd.DataFrame(match_results)
@@ -144,6 +150,9 @@ def run_matching_single_contract(row, pipeline_config):
                     6: 'bboxes',
               }
     match_results_df = match_results_df.rename(columns=columns)
+
+    if match_results_df.empty:
+        return None, None, "match"
 
     # extract the exact text matches of the ocr text segments and the toc
     # labels
@@ -177,7 +186,7 @@ def run_matching_single_contract(row, pipeline_config):
                               pipeline_results_dir,
                               contract_uid)
 
-    return match_results_savepath, json_savepath
+    return match_results_savepath, json_savepath, None
 
 
 def main(input_df, pipeline_config):
@@ -188,18 +197,43 @@ def main(input_df, pipeline_config):
 
     filter_df = input_df.loc[(ocr_results_cond) & (raw_html_cond)]
 
-    for idx, (row_idx, row) in tqdm(enumerate(filter_df.iterrows())):
-        match_results_savepath, json_savepath = \
+    for idx, (row_idx, row) in tqdm(enumerate(filter_df.iterrows()),
+                                    total=len(filter_df)):
+
+        match_results_savepath, json_savepath, status_flag = \
             run_matching_single_contract(row, pipeline_config)
 
-        # update the input df
+        if status_flag == "html":
+            print(f"Contract_uid: {row['contract_uid']} " +
+                  f"Contract Basename: {row['contract_basename']} " +
+                  "ToC was not parsed from HTML")
+
+            # update the config with the processing status
+            input_df.loc[row_idx, 'processing_status'] = \
+                "html not parsed"
+
+        elif status_flag == "match":
+            print(f"Contract_uid: {row['contract_uid']} " +
+                  f"Contract Basename: {row['contract_basename']} " +
+                  "None of the labels from HTML were matched with OCR output")
+
+            # update the config with the processing status
+            input_df.loc[row_idx, 'processing_status'] = \
+                "no matches found"
+
+            continue
+
+        # update the input df with the paths of the output savepaths
         input_df.loc[row_idx, 'pipeline_results_csv_path'] = \
             match_results_savepath
 
         input_df.loc[row_idx, "pipeline_results_json_path"] = json_savepath
 
+        # update the input df with the processing status
+        input_df.loc[row_idx, 'processing_status'] = True
+
         # save the results intermittently
-        if idx % 50 == 0:
+        if idx % 15 == 0:
             input_df.to_csv(
                 pipeline_config["cuad_master_csv_mapping_path"], index=False
             )
