@@ -2,6 +2,8 @@ import re
 from thefuzz import fuzz
 
 # TODO: Figure out logic to help out in debugging errors in matching
+# TODO:  added strip( ) and rstrip(.) to toc_label before matching
+# results in greater number of matches both TP and FP
 
 
 def get_toc_page_id(linewise_ocr_output):
@@ -80,6 +82,9 @@ def match_toc_label_with_ocr_seg(
             return None, None
 
     """
+    # preprocess the toc_label
+    toc_label = toc_label[0]
+    toc_label = toc_label.strip().rstrip(".")
 
     if idx2 is not None:
         if linewise_ocr_output["page_id"][idx1] != linewise_ocr_output["page_id"][idx2]:
@@ -96,7 +101,7 @@ def match_toc_label_with_ocr_seg(
 
         # compute the fuzzy match score between the toc_label and
         # the given text_segment
-        match_score = fuzz.partial_ratio(toc_label[0].lower(), multi_line_text.lower())
+        match_score = fuzz.partial_ratio(toc_label.lower(), multi_line_text.lower())
 
         # the match score must be greater than some min threshold
         full_text_match_cond = match_score >= subset_match_threshold
@@ -104,7 +109,7 @@ def match_toc_label_with_ocr_seg(
         # the matched text segment must have length at least some %-age of
         # the toc label it matched with
         match_len_cond = len(multi_line_text) >= (
-            len(toc_label[0]) * line_len_match_threshold
+            len(toc_label) * line_len_match_threshold
         )
 
         # since the toc label might be inline i.e. part of a longer text
@@ -112,12 +117,12 @@ def match_toc_label_with_ocr_seg(
         # matches with the toc label
 
         # not really necessary for this case but keeping it for consistency
-        beg_line_text = multi_line_text[0 : len(toc_label[0]) * 2]
+        beg_line_text = multi_line_text[0 : len(toc_label) * 2]
 
         # the beginning of the text segment must have some %-age of overlap
         # with the toc label
         beg_line_match_score = fuzz.partial_ratio(
-            toc_label[0].lower(), beg_line_text.lower()
+            toc_label.lower(), beg_line_text.lower()
         )
 
         beg_line_match_cond = beg_line_match_score >= beg_line_match_threshold
@@ -126,7 +131,7 @@ def match_toc_label_with_ocr_seg(
         # the first line of the text segment has some %-age of overlap
         # with the toc label
         first_line_match_score = fuzz.partial_ratio(
-            toc_label[0].lower(), line1_text.lower()
+            toc_label.lower(), line1_text.lower()
         )
 
         first_line_match_cond = (first_line_match_score >=
@@ -142,7 +147,7 @@ def match_toc_label_with_ocr_seg(
             # check if the beginning of the toc_label
             # (first 2 words- design choice) has a high match with
             # the beginning of the matched line.
-            toc_label_beg = toc_label[0].split()[:2]
+            toc_label_beg = toc_label.split()[:2]
             toc_label_beg = " ".join(toc_label_beg)
 
             matched_line_beg = multi_line_text.split()[:2]
@@ -174,7 +179,7 @@ def match_toc_label_with_ocr_seg(
                 return (
                     line1_text,
                     line2_text,
-                    toc_label[0],
+                    toc_label,
                     ymin,
                     ymax,
                     page_id,
@@ -194,14 +199,14 @@ def match_toc_label_with_ocr_seg(
 
     # compute the fuzzy match score between the toc_label and
     # the given text_segment
-    match_score = fuzz.partial_ratio(toc_label[0].lower(), line_text.lower())
+    match_score = fuzz.partial_ratio(toc_label.lower(), line_text.lower())
 
     # the match score must be greater than some min threshold
     full_text_match_cond = match_score >= subset_match_threshold
 
     # the matched text segment must have length at least some %-age of
     # the toc label it matched with
-    match_len_cond = len(line_text) >= (len(toc_label[0]) *
+    match_len_cond = len(line_text) >= (len(toc_label) *
                                         line_len_match_threshold)
 
     # since the toc label might be inline i.e. part of a longer text
@@ -209,12 +214,12 @@ def match_toc_label_with_ocr_seg(
     # matches with the toc label
 
     # index out of the beginning of the line
-    beg_line_text = line_text[0 : len(toc_label[0]) * 2]
+    beg_line_text = line_text[0 : len(toc_label) * 2]
 
     # the beginning of the text segment must have some %-age of overlap
     # with the toc label
     beg_line_match_score = fuzz.partial_ratio(
-        toc_label[0].lower(), beg_line_text.lower()
+        toc_label.lower(), beg_line_text.lower()
     )
 
     beg_line_match_cond = beg_line_match_score >= beg_line_match_threshold
@@ -224,7 +229,7 @@ def match_toc_label_with_ocr_seg(
         # check if the beginning of the toc_label
         # (first 2 words- design choice) has a high match with
         # the beginning of the matched line.
-        toc_label_beg = toc_label[0].split()[:2]
+        toc_label_beg = toc_label.split()[:2]
         toc_label_beg = " ".join(toc_label_beg)
 
         matched_line_beg = line_text.split()[:2]
@@ -251,7 +256,7 @@ def match_toc_label_with_ocr_seg(
             return (
                 line_text,
                 None,
-                toc_label[0],
+                toc_label,
                 ymin,
                 ymax,
                 page_id,
@@ -362,7 +367,10 @@ def find_single_match_id(
     return None, prev_line_pointer
 
 
-def find_all_match_ids(toc_match_config, toc_label_dict, linewise_ocr_output):
+def find_all_match_ids(toc_match_config,
+                       toc_label_dict,
+                       linewise_ocr_output,
+                       contract_uid):
     """Finds the index of the OCR segment with the highest match score with
         a given toc label for all toc labels in a single contract
 
@@ -372,6 +380,7 @@ def find_all_match_ids(toc_match_config, toc_label_dict, linewise_ocr_output):
         toc_label_dict: dict. Mapping of all section labels for a given
             contract
         linewise_ocr_output: dict. Postprocessed OCR output
+        contract_uid: str. The unique identifier for the contract
 
     Returns:
         all_match_info: tuple. Contains metadata associated with the matched
@@ -410,9 +419,10 @@ def find_all_match_ids(toc_match_config, toc_label_dict, linewise_ocr_output):
             all_match_info.append(match_info)
 
         else:
-            print(
-                f"Couldn't match {toc_label[0]} with a line."
-                + "Moving onto next TOC section"
-            )
+            print("*" * 50 + '\n' +
+                  f"Contract_uid:{contract_uid} " +
+                  f"Couldn't match HTML label: {toc_label} " +
+                  "with a line from OCR output. Moving onto next TOC section\n"
+                  )
 
     return all_match_info
