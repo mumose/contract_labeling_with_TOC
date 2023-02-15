@@ -76,7 +76,8 @@ def main(input_df, pipeline_config):
     ocr_results_cond = input_df['ocr_results_path'].isnull()
 
     filter_df = input_df.loc[(raw_html_cond) & (ocr_results_cond)]
-    for idx, (row_idx, row) in tqdm(enumerate(filter_df.iterrows())):
+    for idx, (row_idx, row) in tqdm(enumerate(filter_df.iterrows()),
+                                    total=len(filter_df)):
         ocr_result_path = get_prediction(pipeline_config,
                                          row['pdf_path'])
 
