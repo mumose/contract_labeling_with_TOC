@@ -51,18 +51,22 @@ visualize_results_pipeline:
   poppler_path: null
 
   # dir where the images from the pdf2image conversion will be saved
-  full_contract_image_dir: CUAD_v1/full_contract_images/
+  # this will be saved within the following dir
+  # CUAD_v1/contract_pipeline_results/contract_uid
+  full_contract_image_dir: full_contract_images/
 
   # dir where the images annotated with bbox will be saved
-  annotated_image_dir: CUAD_v1/annotated_images/
+  # this will be saved within the following dir
+  # CUAD_v1/contract_pipeline_results/contract_uid
+  annotated_image_dir: annotated_images/
 
   # dir where the input pdf will be saved
-  # this will be saved within a the following dir
+  # this will be saved within the following dir
   # CUAD_v1/contract_pipeline_results/contract_uid
   input_pdf_save_dir: contract_pdf
 
   # dir where the input html will be saved
-  # this will be saved within a the following dir
+  # this will be saved within the following dir
   # CUAD_v1/contract_pipeline_results/contract_uid
   input_html_save_dir: contract_html
 
