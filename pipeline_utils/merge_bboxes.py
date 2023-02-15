@@ -2,9 +2,12 @@ from thefuzz import fuzz
 from thefuzz import process
 
 
-def merge_bboxes(
-    line1_words, line2_words, toc_label, bboxes, num_words_toc_label, match_score_toc
-):
+def merge_bboxes(line1_words,
+                 line2_words,
+                 toc_label,
+                 bboxes,
+                 num_words_toc_label,
+                 match_score_toc):
     """Extracts the bboxes of the subset of the matched text segment that
     matches closest to the toc label.
 
@@ -51,9 +54,7 @@ def merge_bboxes(
     # text segment
     for _, start_idx in enumerate(range(0, len(full_line_words), num_words_toc_label)):
 
-        window_text = " ".join(
-            full_line_words[start_idx : (start_idx + num_words_toc_label)]
-        )
+        window_text = " ".join(full_line_words[start_idx: (start_idx + num_words_toc_label)])
 
         window_match_score = process.extractBests(
             window_text, [toc_label], scorer=fuzz.token_set_ratio
@@ -66,7 +67,7 @@ def merge_bboxes(
         if line2_words:
             candidate_bboxes = bboxes[0] + bboxes[1]
         else:
-            candidate_bboxes = bboxes[start_idx : (start_idx + num_words_toc_label)]
+            candidate_bboxes = bboxes[start_idx: (start_idx + num_words_toc_label)]
 
         # if the fuzzy match score of the window is greater than the
         # match score of the full line with the toc then find the
@@ -137,6 +138,7 @@ def extract_exact_match(row):
     """
     toc_label = row["Section Title via HTML"]
     bboxes = row["bboxes"]
+
     if toc_label is not None:
         line1_text = row.loc["Line1 via OCR"]
         line2_text = row.loc["Line2 via OCR"]
