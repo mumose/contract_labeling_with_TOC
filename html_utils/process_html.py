@@ -57,7 +57,13 @@ def parse_html(soup):
     """
     table_holder = []
     for table in soup.find_all("table"):
-        for row in table.tbody.find_all("tr"):
+        tags_within_table = [tag.name for tag in table.find_all()]
+        if "tbody" in tags_within_table:
+            iterable = table.tbody.find_all("tr")
+        else:
+            iterable = table.find_all("tr")
+
+        for row in iterable:
             row_holder = []
             for cell in row.find_all("td"):
                 text = extract_td(cell)
@@ -83,7 +89,7 @@ def filter_contents(s):
     Returns:
         remaining: str. the string from when the first table tag begins
     """
-    multi_page_join_distance = 5000
+    multi_page_join_distance = 6000
     cont = re.split("table of contents", s, flags=re.IGNORECASE)
     if len(cont) == 1:
         cont = re.split("contents", s, flags=re.IGNORECASE)
@@ -92,14 +98,15 @@ def filter_contents(s):
     ind_start = remaining.find("<table")
     remaining = remaining[ind_start:]
 
-    indices = [m.start() for m in
-               re.finditer("</table>", remaining, flags=re.IGNORECASE)
-               ]
-
+    indices = [
+        m.start() for m in re.finditer("</table>", remaining, flags=re.IGNORECASE)
+    ]
     valid_index = [x for x in indices if x < multi_page_join_distance]
     if valid_index:
         print("Combining table on next page")
         return remaining[: valid_index[-1] + 10]
+    if indices:
+        return remaining[: indices[0] + 10]
 
     return remaining[:multi_page_join_distance]
 
@@ -154,8 +161,7 @@ def refine_table(toc):
             is_subsection = False
 
         if not is_subsection:
-            n_section_str = (roman.toRoman(n_section) if
-                             is_roman else f"{n_section}")
+            n_section_str = roman.toRoman(n_section) if is_roman else f"{n_section}"
 
             if n_section_str in item[0]:
                 section_title = item[0]
@@ -174,8 +180,7 @@ def refine_table(toc):
         else:
             # Is a section title with d.d style numbering
             if len(item) == 2:
-                section_title = " ".join(re.split(r"(\d\.\d+)",
-                                                  item[0])).strip()
+                section_title = " ".join(re.split(r"(\d\.\d+)", item[0])).strip()
                 label_dict[n_section] = (section_title + " " + item[1], {})
                 n_section += 1
 
@@ -186,16 +191,12 @@ def refine_table(toc):
                     label_dict[n_section - 1]
 
                 except Exception:
-                    label_dict[n_section - 1] = (
-                                                    "Miscellanous Subsections",
-                                                    {}
-                                                 )
+                    label_dict[n_section - 1] = ("Miscellanous Subsections", {})
 
-                label_dict[n_section - 1][1][n_subsection] = \
-                    (
-                        f"{is_subsection.group()} {concat_items}",
-                        {},
-                    )
+                label_dict[n_section - 1][1][n_subsection] = (
+                    f"{is_subsection.group()} {concat_items}",
+                    {},
+                )
 
             n_subsection += 1
 
@@ -203,7 +204,7 @@ def refine_table(toc):
 
 
 def flatten_processed_html(nested_dict):
-    '''Flattens the toc section label info, parsed from HTML
+    """Flattens the toc section label info, parsed from HTML
 
     Args:
         nested_dict: dict. Contains the section labels for a single
@@ -212,7 +213,7 @@ def flatten_processed_html(nested_dict):
     Returns:
         toc_label_dict_flattened: dict. Flattend toc section labels for
             a single contract
-    '''
+    """
     i = 1
     toc_label_dict_flattened = {}
 

@@ -9,7 +9,7 @@ from tqdm import tqdm
 from doctr.io import DocumentFile
 from doctr.models import ocr_predictor
 
-#TODO: RUN OCR only for contracts that have a TOC
+# TODO: RUN OCR only for contracts that have a TOC
 
 """
     Must be executed from ./contract_labeling_with_TOC dir
@@ -18,10 +18,10 @@ from doctr.models import ocr_predictor
 
 
 def get_prediction(pipeline_config, pdf_path, contract_uid=None):
-    ''''''
-    ocr_config = pipeline_config['ocr_pipeline']
+    """"""
+    ocr_config = pipeline_config["ocr_pipeline"]
 
-    cuad_base_dir = pipeline_config['cuad_data_base_dir']
+    cuad_base_dir = pipeline_config["cuad_data_base_dir"]
     ocr_results_dir = ocr_config["ocr_output_dir"]
     ocr_results_dir = os.path.join(cuad_base_dir, ocr_results_dir)
 
@@ -39,9 +39,11 @@ def get_prediction(pipeline_config, pdf_path, contract_uid=None):
         contract_uid, _ = os.path.splitext(contract_basname)
 
     # define the model object
-    model = ocr_predictor(det_arch=ocr_config['text_detr_model'],
-                          reco_arch=ocr_config['text_recog_model'],
-                          pretrained=True)
+    model = ocr_predictor(
+        det_arch=ocr_config["text_detr_model"],
+        reco_arch=ocr_config["text_recog_model"],
+        pretrained=True,
+    )
 
     # define the input data object
     doc = DocumentFile.from_pdf(pdf_path)
@@ -53,18 +55,19 @@ def get_prediction(pipeline_config, pdf_path, contract_uid=None):
     json_output = model_pred.export()
 
     # define the outpath for this pdf file
-    ocr_result_savepath = os.path.join(ocr_results_dir,
-                                       f"{contract_uid}_ocr_results.json")
+    ocr_result_savepath = os.path.join(
+        ocr_results_dir, f"{contract_uid}_ocr_results.json"
+    )
     print(f"ocr_result_savepath={ocr_result_savepath}")
 
-    with open(ocr_result_savepath, 'w', encoding='utf-8') as json_fh:
+    with open(ocr_result_savepath, "w", encoding="utf-8") as json_fh:
         json.dump(json_output, json_fh, ensure_ascii=False, indent=2)
 
     return ocr_result_savepath
 
 
 def main(input_df, pipeline_config):
-    '''Executes ocr 'pipeline for all contracts in master csv mapping'''
+    """Executes ocr 'pipeline for all contracts in master csv mapping"""
     # TODO: remove later if necessary
     # the html must be present
     raw_html_cond = input_df['raw_html_path'].notnull()
@@ -77,14 +80,14 @@ def main(input_df, pipeline_config):
         ocr_result_path = get_prediction(pipeline_config,
                                          row['pdf_path'])
 
-        input_df.loc[row_idx, 'ocr_results_path'] = ocr_result_path
+        input_df.loc[row_idx, "ocr_results_path"] = ocr_result_path
 
         # save the results intermittently
         # if idx % 50 == 0:
-        input_df.to_csv(pipeline_config['cuad_master_csv_mapping_path'],
+        input_df.to_csv(pipeline_config["cuad_master_csv_mapping_path"],
                         index=False)
 
-    input_df.to_csv(pipeline_config['cuad_master_csv_mapping_path'],
+    input_df.to_csv(pipeline_config["cuad_master_csv_mapping_path"],
                     index=False)
 
     return
@@ -93,16 +96,18 @@ def main(input_df, pipeline_config):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--pipeline_config',
-                        help='path to the pipeline config yaml file',
-                        default='./config/pipeline_config.yml')
+    parser.add_argument(
+        "--pipeline_config",
+        help="path to the pipeline config yaml file",
+        default="./config/pipeline_config.yml",
+    )
 
     args = parser.parse_args()
 
-    with open(args.pipeline_config, 'r') as yml_file:
+    with open(args.pipeline_config, "r") as yml_file:
         pipeline_config = yaml.load(yml_file, Loader=yaml.loader.SafeLoader)
 
-    input_df = pd.read_csv(pipeline_config['cuad_master_csv_mapping_path'])
+    input_df = pd.read_csv(pipeline_config["cuad_master_csv_mapping_path"])
 
     # call main function
     main(input_df, pipeline_config)
