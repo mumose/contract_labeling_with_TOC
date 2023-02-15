@@ -255,7 +255,9 @@ def annotate_images(match_results_df,
         img = cv2.imread(img_in_path)
         height, width = img.shape[:2]  # dimensions are H x W
 
-        bbox_attributes = {"coords": None, "text_via_ocr": None, "text_from_html": None}
+        bbox_attributes = {"coords": None,
+                           "text_via_ocr": None,
+                           "text_from_html": None}
 
         contract_tracker[contract_uid]["pages"][page_id]["bbox"] = [
             bbox_attributes.copy() for _ in range(len(subset_df))
