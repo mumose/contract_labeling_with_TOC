@@ -114,6 +114,7 @@ def extract_labels_to_folder(dict_of_tocs, output_dir, contract_map):
   id_map = {v:k for k, v in contract_map.items()}
 
   for item in dict_of_tocs.items():
+    print(item[0])
     if item[0] in agg_label_dict.keys():
       continue
     if 'Monsanto Company' in item[0]:
