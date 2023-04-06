@@ -1,0 +1,113 @@
+,table,tr,node_text,full_xpath
+0,div[2],div[1],i,/document/type/sequence/filename/description/text/html/body/div[2]/div[1]/div/div
+1,div[3],div[1],ii,/document/type/sequence/filename/description/text/html/body/div[3]/div[1]/div/div
+2,div[4],div[1],iii,/document/type/sequence/filename/description/text/html/body/div[4]/div[1]/div/div
+13,table[1],tr[1],Page,/document/type/sequence/filename/description/text/html/body/table[1]/tr[1]/td[3]/b
+26,table[1],tr[3],ARTICLE 1 DEFINITIONS 1,/document/type/sequence/filename/description/text/html/body/table[1]/tr[3]/td[1]/p/b
+27,table[1],tr[4],Section 1.01 Definitions 1,/document/type/sequence/filename/description/text/html/body/table[1]/tr[4]/td[1]/p
+28,table[1],tr[5],Section 1.02 Other Definitional and Interpretative Provisions 16,/document/type/sequence/filename/description/text/html/body/table[1]/tr[5]/td[1]/p
+29,table[1],tr[6],ARTICLE 2 THE MERGER 17,/document/type/sequence/filename/description/text/html/body/table[1]/tr[6]/td[1]/p/b
+30,table[1],tr[7],Section 2.01 The Closing 17,/document/type/sequence/filename/description/text/html/body/table[1]/tr[7]/td[1]/p
+31,table[1],tr[8],Section 2.02 The Merger 17,/document/type/sequence/filename/description/text/html/body/table[1]/tr[8]/td[1]/p
+32,table[1],tr[9],Section 2.03 Conversion of Shares 18,/document/type/sequence/filename/description/text/html/body/table[1]/tr[9]/td[1]/p
+3,table[1],tr[10],Section 2.04 Exchange and Payment 18,/document/type/sequence/filename/description/text/html/body/table[1]/tr[10]/td[1]/p
+4,table[1],tr[11],Section 2.05 Dissenting Shares 20,/document/type/sequence/filename/description/text/html/body/table[1]/tr[11]/td[1]/p
+5,table[1],tr[12],Section 2.06 Company Equity Awards; ESPP 20,/document/type/sequence/filename/description/text/html/body/table[1]/tr[12]/td[1]/p
+6,table[1],tr[13],Section 2.07 Adjustments 23,/document/type/sequence/filename/description/text/html/body/table[1]/tr[13]/td[1]/p
+7,table[1],tr[14],Section 2.08 Withholding Rights 23,/document/type/sequence/filename/description/text/html/body/table[1]/tr[14]/td[1]/p
+8,table[1],tr[15],Section 2.09 Termination of Macquarie/GCM Merger Agreement and Payment of Termination Fee 23,/document/type/sequence/filename/description/text/html/body/table[1]/tr[15]/td[1]/p
+9,table[1],tr[16],ARTICLE 3 THE SURVIVING CORPORATION 23,/document/type/sequence/filename/description/text/html/body/table[1]/tr[16]/td[1]/p/b
+10,table[1],tr[17],Section 3.01 Certificate of Incorporation 23,/document/type/sequence/filename/description/text/html/body/table[1]/tr[17]/td[1]/p
+11,table[1],tr[18],Section 3.02 Bylaws 24,/document/type/sequence/filename/description/text/html/body/table[1]/tr[18]/td[1]/p
+12,table[1],tr[19],Section 3.03 Directors and Officers 24,/document/type/sequence/filename/description/text/html/body/table[1]/tr[19]/td[1]/p
+14,table[1],tr[20],ARTICLE 4 REPRESENTATIONS AND WARRANTIES OF THE COMPANY 24,/document/type/sequence/filename/description/text/html/body/table[1]/tr[20]/td[1]/p/b
+15,table[1],tr[21],"Section 4.01 Organization, Standing and Power 24",/document/type/sequence/filename/description/text/html/body/table[1]/tr[21]/td[1]/p
+16,table[1],tr[22],Section 4.02 Corporate Authorization 25,/document/type/sequence/filename/description/text/html/body/table[1]/tr[22]/td[1]/p
+17,table[1],tr[23],Section 4.03 Governmental Authorization 25,/document/type/sequence/filename/description/text/html/body/table[1]/tr[23]/td[1]/p
+18,table[1],tr[24],Section 4.04 Non-contravention 26,/document/type/sequence/filename/description/text/html/body/table[1]/tr[24]/td[1]/p
+19,table[1],tr[25],Section 4.05 Capitalization 26,/document/type/sequence/filename/description/text/html/body/table[1]/tr[25]/td[1]/p
+20,table[1],tr[26],Section 4.06 Subsidiaries 28,/document/type/sequence/filename/description/text/html/body/table[1]/tr[26]/td[1]/p
+21,table[1],tr[27],Section 4.07 SEC Filings and the Sarbanes-Oxley Act 28,/document/type/sequence/filename/description/text/html/body/table[1]/tr[27]/td[1]/p
+22,table[1],tr[28],Section 4.08 Financial Statements; Internal Controls 30,/document/type/sequence/filename/description/text/html/body/table[1]/tr[28]/td[1]/p
+23,table[1],tr[29],Section 4.09 Absence of Certain Changes 31,/document/type/sequence/filename/description/text/html/body/table[1]/tr[29]/td[1]/p
+24,table[1],tr[30],Section 4.10 No Undisclosed Material Liabilities 31,/document/type/sequence/filename/description/text/html/body/table[1]/tr[30]/td[1]/p
+25,table[1],tr[31],Section 4.11 Litigation 31,/document/type/sequence/filename/description/text/html/body/table[1]/tr[31]/td[1]/p
+43,table[2],tr[1],Section 4.12 Compliance with Applicable Law; Licenses 32,/document/type/sequence/filename/description/text/html/body/table[2]/tr[1]/td[1]/p
+54,table[2],tr[2],Section 4.13 Certain Business Practices 34,/document/type/sequence/filename/description/text/html/body/table[2]/tr[2]/td[1]/p
+58,table[2],tr[3],Section 4.14 Material Contracts 34,/document/type/sequence/filename/description/text/html/body/table[2]/tr[3]/td[1]/p
+59,table[2],tr[4],Section 4.15 Taxes 37,/document/type/sequence/filename/description/text/html/body/table[2]/tr[4]/td[1]/p
+60,table[2],tr[5],Section 4.16 Employee Benefit Plans 38,/document/type/sequence/filename/description/text/html/body/table[2]/tr[5]/td[1]/p
+61,table[2],tr[6],Section 4.17 Labor and Employment Matters 42,/document/type/sequence/filename/description/text/html/body/table[2]/tr[6]/td[1]/p
+62,table[2],tr[7],Section 4.18 Insurance 43,/document/type/sequence/filename/description/text/html/body/table[2]/tr[7]/td[1]/p
+63,table[2],tr[8],Section 4.19 Environmental Matters 43,/document/type/sequence/filename/description/text/html/body/table[2]/tr[8]/td[1]/p
+64,table[2],tr[9],Section 4.20 Intellectual Property 44,/document/type/sequence/filename/description/text/html/body/table[2]/tr[9]/td[1]/p
+33,table[2],tr[10],Section 4.21 Properties 46,/document/type/sequence/filename/description/text/html/body/table[2]/tr[10]/td[1]/p
+34,table[2],tr[11],Section 4.22 Privacy and Data Security 47,/document/type/sequence/filename/description/text/html/body/table[2]/tr[11]/td[1]/p
+35,table[2],tr[12],Section 4.23 Brokers’ Fees 48,/document/type/sequence/filename/description/text/html/body/table[2]/tr[12]/td[1]/p
+36,table[2],tr[13],Section 4.24 Opinion of Financial Advisor 48,/document/type/sequence/filename/description/text/html/body/table[2]/tr[13]/td[1]/p
+37,table[2],tr[14],Section 4.25 Trade Practices 49,/document/type/sequence/filename/description/text/html/body/table[2]/tr[14]/td[1]/p
+38,table[2],tr[15],Section 4.26 International Trade Laws 49,/document/type/sequence/filename/description/text/html/body/table[2]/tr[15]/td[1]/p
+39,table[2],tr[16],Section 4.27 Macquarie/GCM Merger Agreement. 49,/document/type/sequence/filename/description/text/html/body/table[2]/tr[16]/td[1]/p
+40,table[2],tr[17],ARTICLE 5 REPRESENTATIONS AND WARRANTIES OF PARENT AND MERGER SUB 50,/document/type/sequence/filename/description/text/html/body/table[2]/tr[17]/td[1]/p/b
+41,table[2],tr[18],"Section 5.01 Organization, Standing and Power 50",/document/type/sequence/filename/description/text/html/body/table[2]/tr[18]/td[1]/p
+42,table[2],tr[19],Section 5.02 Corporate Authorization 50,/document/type/sequence/filename/description/text/html/body/table[2]/tr[19]/td[1]/p
+44,table[2],tr[20],Section 5.03 Governmental Authorization 50,/document/type/sequence/filename/description/text/html/body/table[2]/tr[20]/td[1]/p
+45,table[2],tr[21],Section 5.04 Non-contravention 50,/document/type/sequence/filename/description/text/html/body/table[2]/tr[21]/td[1]/p
+46,table[2],tr[22],Section 5.05 Capitalization and Operation of Merger Sub 51,/document/type/sequence/filename/description/text/html/body/table[2]/tr[22]/td[1]/p
+47,table[2],tr[23],Section 5.06 No Vote of Parent Stockholders; Required Approval 51,/document/type/sequence/filename/description/text/html/body/table[2]/tr[23]/td[1]/p
+48,table[2],tr[24],Section 5.07 Litigation 51,/document/type/sequence/filename/description/text/html/body/table[2]/tr[24]/td[1]/p
+49,table[2],tr[25],Section 5.08 Financing 52,/document/type/sequence/filename/description/text/html/body/table[2]/tr[25]/td[1]/p
+50,table[2],tr[26],Section 5.09 Solvency 53,/document/type/sequence/filename/description/text/html/body/table[2]/tr[26]/td[1]/p
+51,table[2],tr[27],Section 5.10 Guarantees 53,/document/type/sequence/filename/description/text/html/body/table[2]/tr[27]/td[1]/p
+52,table[2],tr[28],Section 5.11 Absence of Certain Agreements 53,/document/type/sequence/filename/description/text/html/body/table[2]/tr[28]/td[1]/p
+53,table[2],tr[29],Section 5.12 Stock Ownership 54,/document/type/sequence/filename/description/text/html/body/table[2]/tr[29]/td[1]/p
+55,table[2],tr[30],Section 5.13 Equity Investors 54,/document/type/sequence/filename/description/text/html/body/table[2]/tr[30]/td[1]/p
+56,table[2],tr[31],ARTICLE 6 COVENANTS 54,/document/type/sequence/filename/description/text/html/body/table[2]/tr[31]/td[1]/p/b
+57,table[2],tr[32],Section 6.01 Conduct of the Company 54,/document/type/sequence/filename/description/text/html/body/table[2]/tr[32]/td[1]/p
+75,table[3],tr[1],Section 6.02 No Solicitation 58,/document/type/sequence/filename/description/text/html/body/table[3]/tr[1]/td[1]/p
+86,table[3],tr[2],Section 6.03 Company Recommendation 60,/document/type/sequence/filename/description/text/html/body/table[3]/tr[2]/td[1]/p
+90,table[3],tr[3],Section 6.04 Preparation of Proxy Statement; Stockholders’ Meeting 63,/document/type/sequence/filename/description/text/html/body/table[3]/tr[3]/td[1]/p
+91,table[3],tr[4],Section 6.05 Access to Information 64,/document/type/sequence/filename/description/text/html/body/table[3]/tr[4]/td[1]/p
+92,table[3],tr[5],Section 6.06 Notice of Certain Events 65,/document/type/sequence/filename/description/text/html/body/table[3]/tr[5]/td[1]/p
+93,table[3],tr[6],Section 6.07 Employee Benefit Plan Matters 65,/document/type/sequence/filename/description/text/html/body/table[3]/tr[6]/td[1]/p
+94,table[3],tr[7],Section 6.08 State Takeover Laws 67,/document/type/sequence/filename/description/text/html/body/table[3]/tr[7]/td[1]/p
+95,table[3],tr[8],Section 6.09 Obligations of Merger Sub 67,/document/type/sequence/filename/description/text/html/body/table[3]/tr[8]/td[1]/p
+96,table[3],tr[9],Section 6.10 Voting of Shares 67,/document/type/sequence/filename/description/text/html/body/table[3]/tr[9]/td[1]/p
+65,table[3],tr[10],"Section 6.11 Director and Officer Indemnification, Exculpation and Insurance 68",/document/type/sequence/filename/description/text/html/body/table[3]/tr[10]/td[1]/p
+66,table[3],tr[11],Section 6.12 Further Action; Regulatory Approvals; Reasonable Best Efforts 69,/document/type/sequence/filename/description/text/html/body/table[3]/tr[11]/td[1]/p
+67,table[3],tr[12],Section 6.13 Stockholder Litigation 72,/document/type/sequence/filename/description/text/html/body/table[3]/tr[12]/td[1]/p
+68,table[3],tr[13],Section 6.14 Public Announcements 72,/document/type/sequence/filename/description/text/html/body/table[3]/tr[13]/td[1]/p
+69,table[3],tr[14],Section 6.15 Further Assurances 73,/document/type/sequence/filename/description/text/html/body/table[3]/tr[14]/td[1]/p
+70,table[3],tr[15],Section 6.16 Section 16 Matters 73,/document/type/sequence/filename/description/text/html/body/table[3]/tr[15]/td[1]/p
+71,table[3],tr[16],Section 6.17 Financing 74,/document/type/sequence/filename/description/text/html/body/table[3]/tr[16]/td[1]/p
+72,table[3],tr[17],Section 6.18 Confidentiality 76,/document/type/sequence/filename/description/text/html/body/table[3]/tr[17]/td[1]/p
+73,table[3],tr[18],Section 6.19 Director Resignations 77,/document/type/sequence/filename/description/text/html/body/table[3]/tr[18]/td[1]/p
+74,table[3],tr[19],Section 6.20 Merger Sub Expenditure; Parent Distributions 77,/document/type/sequence/filename/description/text/html/body/table[3]/tr[19]/td[1]/p
+76,table[3],tr[20],Section 6.21 Stock Market De-Listing 77,/document/type/sequence/filename/description/text/html/body/table[3]/tr[20]/td[1]/p
+77,table[3],tr[21],Section 6.22 Standstill 78,/document/type/sequence/filename/description/text/html/body/table[3]/tr[21]/td[1]/p
+78,table[3],tr[22],ARTICLE 7 CONDITIONS TO THE MERGER 78,/document/type/sequence/filename/description/text/html/body/table[3]/tr[22]/td[1]/p/b
+79,table[3],tr[23],Section 7.01 Conditions to the Obligations of Each Party 78,/document/type/sequence/filename/description/text/html/body/table[3]/tr[23]/td[1]/p
+80,table[3],tr[24],Section 7.02 Conditions to the Obligations of Parent and Merger Sub 79,/document/type/sequence/filename/description/text/html/body/table[3]/tr[24]/td[1]/p
+81,table[3],tr[25],Section 7.03 Conditions to the Obligations of the Company 80,/document/type/sequence/filename/description/text/html/body/table[3]/tr[25]/td[1]/p
+82,table[3],tr[26],Section 7.04 Frustration of Closing Conditions 80,/document/type/sequence/filename/description/text/html/body/table[3]/tr[26]/td[1]/p
+83,table[3],tr[27],ARTICLE 8 TERMINATION 80,/document/type/sequence/filename/description/text/html/body/table[3]/tr[27]/td[1]/p/b
+84,table[3],tr[28],Section 8.01 Termination 80,/document/type/sequence/filename/description/text/html/body/table[3]/tr[28]/td[1]/p
+85,table[3],tr[29],Section 8.02 Effect of Termination 82,/document/type/sequence/filename/description/text/html/body/table[3]/tr[29]/td[1]/p
+87,table[3],tr[30],ARTICLE 9 MISCELLANEOUS 82,/document/type/sequence/filename/description/text/html/body/table[3]/tr[30]/td[1]/p/b
+88,table[3],tr[31],Section 9.01 Notices 82,/document/type/sequence/filename/description/text/html/body/table[3]/tr[31]/td[1]/p
+89,table[3],tr[32],Section 9.02 Nonsurvival of Representations and Warranties 83,/document/type/sequence/filename/description/text/html/body/table[3]/tr[32]/td[1]/p
+103,table[4],tr[1],Section 9.03 Amendments and Waivers 83,/document/type/sequence/filename/description/text/html/body/table[4]/tr[1]/td[1]/p
+104,table[4],tr[2],Section 9.04 Fees and Expenses 84,/document/type/sequence/filename/description/text/html/body/table[4]/tr[2]/td[1]/p
+105,table[4],tr[3],Section 9.05 Assignment; Benefit 86,/document/type/sequence/filename/description/text/html/body/table[4]/tr[3]/td[1]/p
+106,table[4],tr[4],Section 9.06 Governing Law 86,/document/type/sequence/filename/description/text/html/body/table[4]/tr[4]/td[1]/p
+107,table[4],tr[5],Section 9.07 Jurisdiction 86,/document/type/sequence/filename/description/text/html/body/table[4]/tr[5]/td[1]/p
+108,table[4],tr[6],Section 9.08 Waiver of Jury Trial 86,/document/type/sequence/filename/description/text/html/body/table[4]/tr[6]/td[1]/p
+109,table[4],tr[7],Section 9.09 Specific Performance 87,/document/type/sequence/filename/description/text/html/body/table[4]/tr[7]/td[1]/p
+110,table[4],tr[8],Section 9.10 Severability 88,/document/type/sequence/filename/description/text/html/body/table[4]/tr[8]/td[1]/p
+111,table[4],tr[9],Section 9.11 Parent Guarantee 88,/document/type/sequence/filename/description/text/html/body/table[4]/tr[9]/td[1]/p
+97,table[4],tr[10],Section 9.12 Entire Agreement; No Reliance; Access to Information 88,/document/type/sequence/filename/description/text/html/body/table[4]/tr[10]/td[1]/p
+98,table[4],tr[11],Section 9.13 No Presumption Against Drafting Party 89,/document/type/sequence/filename/description/text/html/body/table[4]/tr[11]/td[1]/p
+99,table[4],tr[12],Section 9.14 Counterparts; Effectiveness 90,/document/type/sequence/filename/description/text/html/body/table[4]/tr[12]/td[1]/p
+100,table[4],tr[13],Section 9.15 Debt Financing Matters 90,/document/type/sequence/filename/description/text/html/body/table[4]/tr[13]/td[1]/p
+101,table[4],tr[14],Section 9.16 Limitation on Recourse 91,/document/type/sequence/filename/description/text/html/body/table[4]/tr[14]/td[1]/p
+102,table[4],tr[15],Section 9.17 Transfer Taxes 91,/document/type/sequence/filename/description/text/html/body/table[4]/tr[15]/td[1]/p
